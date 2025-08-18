@@ -176,9 +176,15 @@ function Header() {
             gap={1}
           >
             {socialItems.map((item, index) => (
-              <CommonIconButton key={index} sx={{ color: "white" }}>
-                {item}
-              </CommonIconButton>
+              <a
+                href="https://www.facebook.com/"
+                key={index}
+                style={{ color: "white" }}
+              >
+                <CommonIconButton sx={{ color: "white" }}>
+                  {item}
+                </CommonIconButton>
+              </a>
             ))}
           </Box>
 

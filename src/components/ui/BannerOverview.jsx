@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
+
 import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
+import CommonIconButton from "../common/CommonIconButton";
+
 import Banner1 from "@assets/banner/banner_1.jpg";
 import Banner2 from "@assets/banner/banner_2.jpg";
 import Banner3 from "@assets/banner/banner_3.jpg";
-import Typography from "@mui/material/Typography";
 
 const banners = [Banner1, Banner2, Banner3];
 
@@ -64,7 +67,7 @@ export default function BannerSlider() {
       />
 
       {/* Prev/Next buttons */}
-      <IconButton
+      <CommonIconButton
         onClick={prevSlide}
         sx={{
           position: "absolute",
@@ -74,12 +77,12 @@ export default function BannerSlider() {
           color: "white",
           backgroundColor: "rgba(0,0,0,0.4)",
           "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
-          zIndex: 2,
+          zIndex: 10,
         }}
       >
         <ArrowBackIosNewIcon />
-      </IconButton>
-      <IconButton
+      </CommonIconButton>
+      <CommonIconButton
         onClick={nextSlide}
         sx={{
           position: "absolute",
@@ -89,11 +92,11 @@ export default function BannerSlider() {
           color: "white",
           backgroundColor: "rgba(0,0,0,0.4)",
           "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
-          zIndex: 2,
+          zIndex: 10,
         }}
       >
         <ArrowForwardIosIcon />
-      </IconButton>
+      </CommonIconButton>
 
       <Box
         height={"100%"}
