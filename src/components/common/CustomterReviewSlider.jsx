@@ -59,7 +59,13 @@ function CustomerReviewSlider({ reviews }) {
       >
         Cảm nghĩ khách hàng về dịch vụ tư vấn của Ms. Phạm Tuyền
       </Typography>
-      <Typography variant="body1" color="black" mb={2} textAlign={"center"}>
+      <Typography
+        variant="body1"
+        color="black"
+        px={2}
+        mb={2}
+        textAlign={"center"}
+      >
         Lắng nghe những câu chuyện thực tế từ khách hàng đã trải nghiệm dịch vụ
         tư vấn tài chính của Ms. Phạm Tuyền
       </Typography>
