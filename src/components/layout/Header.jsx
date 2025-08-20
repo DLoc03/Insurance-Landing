@@ -22,12 +22,16 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import PermPhoneMsgIcon from "@mui/icons-material/PermPhoneMsg";
 
+import { FaTiktok } from "react-icons/fa";
+import { SiZalo } from "react-icons/si";
+
 import CommonIconButton from "../common/CommonIconButton";
 import CommonMenuItem from "../common/CommonMenuItem";
 
 import HideOnScroll from "@/contexts/HideOnScroll";
 import { PATHS } from "@/constants";
 import { useHandleNavigate } from "@/utils";
+import { useLocation } from "react-router-dom";
 
 const navItems = [
   {
@@ -63,15 +67,14 @@ const navItems = [
 ];
 
 const socialItems = [
-  <FacebookOutlinedIcon />,
-  <InstagramIcon />,
-  <YouTubeIcon />,
-  <TwitterIcon />,
-  <LinkedInIcon />,
+  { path: "", icon: <FacebookOutlinedIcon /> },
+  { path: "", icon: <FaTiktok /> },
+  { path: "", icon: <SiZalo /> },
 ];
 
 function Header() {
   const handleNavigate = useHandleNavigate();
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -101,187 +104,171 @@ function Header() {
   };
 
   return (
-    <AppBar
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        position: "fixed",
-        zIndex: 1100,
-        top: 0,
-        left: 0,
-        width: "100%",
-        boxShadow: scrolled ? 4 : "none",
-        backgroundColor: "transparent",
-      }}
-    >
-      {/* Top Bar - Hide on scroll */}
-      <Box
+    <HideOnScroll>
+      <AppBar
         sx={{
-          width: "100%",
           display: "flex",
-          justifyContent: "center",
-          backgroundColor: "primary.main",
+          flexDirection: "column",
+          alignItems: "center",
+          position: "fixed",
+          zIndex: 1100,
+          top: 0,
+          left: 0,
+          width: "100%",
+          boxShadow: scrolled ? 4 : "none",
+          backgroundColor: "transparent",
         }}
       >
+        {/* Top Bar - Hide on scroll */}
         <Box
-          display={"flex"}
-          justifyContent={"space-between"}
           sx={{
-            py: 2,
-            px: { xs: 2, sm: 2, md: 2, lg: 0, xl: 0 },
-            maxWidth: 1360,
-            width: { xs: "100%", sm: "100%", md: "100%", lg: 1360, xl: 1360 },
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: "primary.main",
           }}
         >
-          {/* Address and Email */}
           <Box
-            display={{
-              xs: "none",
-              sm: "none",
-              md: "none",
-              lg: "flex",
-              xl: "flex",
-            }}
-            gap={2}
-          >
-            <Box display={"flex"} gap={1} alignItems={"center"}>
-              <FmdGoodOutlinedIcon />
-              <Typography variant="body3" color="white">
-                Address
-              </Typography>
-            </Box>
-            <Divider
-              orientation="vertical"
-              flexItem
-              sx={{ borderColor: "white" }}
-            />
-            <Box display={"flex"} gap={1} alignItems={"center"}>
-              <MailOutlineOutlinedIcon />
-              <Typography variant="body3" color="white">
-                Email
-              </Typography>
-            </Box>
-          </Box>
-
-          {/* Social Icons */}
-          <Box
-            display={{
-              xs: "none",
-              sm: "none",
-              md: "none",
-              lg: "flex",
-              xl: "flex",
-            }}
-            gap={1}
-          >
-            {socialItems.map((item, index) => (
-              <a
-                href="https://www.facebook.com/"
-                key={index}
-                style={{ color: "white" }}
-              >
-                <CommonIconButton sx={{ color: "white" }}>
-                  {item}
-                </CommonIconButton>
-              </a>
-            ))}
-          </Box>
-
-          {/* Logo mobile */}
-          <Box
-            display={{
-              xs: "flex",
-              sm: "flex",
-              md: "flex",
-              lg: "none",
-              xl: "none",
+            display={"flex"}
+            justifyContent={"space-between"}
+            sx={{
+              py: 2,
+              px: { xs: 2, sm: 2, md: 2, lg: 0, xl: 0 },
+              maxWidth: 1360,
+              width: { xs: "100%", sm: "100%", md: "100%", lg: 1360, xl: 1360 },
             }}
           >
-            <Typography variant="h4" color="white">
-              Logo
-            </Typography>
-          </Box>
-
-          {/* Menu Drawer Mobile */}
-          <Box
-            display={{
-              xs: "flex",
-              sm: "flex",
-              md: "flex",
-              lg: "none",
-              xl: "none",
-            }}
-          >
-            <CommonIconButton
-              sx={{ color: "white" }}
-              onClick={toggleDrawer(true)}
+            {/* Address and Email */}
+            <Box
+              display={{
+                xs: "none",
+                sm: "none",
+                md: "none",
+                lg: "flex",
+                xl: "flex",
+              }}
+              gap={2}
             >
-              <MenuIcon />
-            </CommonIconButton>
-          </Box>
-          <Drawer anchor="right" open={menuOpen} onClose={toggleDrawer(false)}>
-            <Typography variant="h6" mx={"auto"} my={2}>
-              Logo
-            </Typography>
-            {navItems.map((menu, index) => (
-              <CommonMenuItem
-                key={index}
-                label={menu.name}
-                color="primary.strong"
-                onClick={() => handleMenuClick(menu.path)}
-              >
-                {menu.icon}
-              </CommonMenuItem>
-            ))}
-          </Drawer>
-        </Box>
-      </Box>
-
-      {/* Navigation Menu */}
-      <Box
-        sx={{
-          display: {
-            xs: "none",
-            sm: "none",
-            md: "none",
-            lg: "flex",
-            xl: "flex",
-          },
-          backgroundColor: "white",
-          transition: "background-color 0.2s ease",
-          justifyContent: "center",
-          width: "100%",
-          px: { xs: 2, sm: 2, md: 2, lg: 0, xl: 0 },
-          boxShadow: "0 2px 4px rgba(0,0,0,0.08)",
-        }}
-      >
-        <Box
-          maxWidth={1360}
-          width={1360}
-          py={2}
-          display={"flex"}
-          justifyContent={"space-between"}
-          alignItems={"center"}
-        >
-          <Box>
-            <Typography variant="h4" color="primary.strong">
-              Logo
-            </Typography>
-          </Box>
-          <Box display={"flex"}>
-            {navItems.map((menu, index) => (
-              <CommonMenuItem
-                key={index}
-                label={menu.name}
-                path={menu.path}
-                color="primary.strong"
+              <Box display={"flex"} gap={1} alignItems={"center"}>
+                <FmdGoodOutlinedIcon />
+                <Typography variant="body1" color="white">
+                  Address
+                </Typography>
+              </Box>
+              <Divider
+                orientation="vertical"
+                flexItem
+                sx={{ borderColor: "white" }}
               />
-            ))}
+              <Box display={"flex"} gap={1} alignItems={"center"}>
+                <MailOutlineOutlinedIcon />
+                <Typography variant="body1" color="white">
+                  Email
+                </Typography>
+              </Box>
+            </Box>
+
+            {/* Social Icons */}
+            <Box
+              display={{
+                xs: "none",
+                sm: "none",
+                md: "none",
+                lg: "flex",
+                xl: "flex",
+              }}
+              gap={1}
+            >
+              {socialItems.map((item, index) => (
+                <a href={item.path} key={index} style={{ color: "white" }}>
+                  <CommonIconButton sx={{ color: "white", fontSize: 20 }}>
+                    {item.icon}
+                  </CommonIconButton>
+                </a>
+              ))}
+            </Box>
+
+            {/* Menu Drawer Mobile */}
+            <Box
+              display={{
+                xs: "flex",
+                sm: "flex",
+                md: "flex",
+                lg: "none",
+                xl: "none",
+              }}
+            >
+              <CommonIconButton
+                sx={{ color: "white" }}
+                onClick={toggleDrawer(true)}
+              >
+                <MenuIcon />
+              </CommonIconButton>
+            </Box>
+            <Drawer
+              anchor="right"
+              open={menuOpen}
+              onClose={toggleDrawer(false)}
+            >
+              <Typography variant="h6" mx={"auto"} my={2}>
+                Logo
+              </Typography>
+              {navItems.map((menu, index) => (
+                <CommonMenuItem
+                  key={index}
+                  label={menu.name}
+                  color="primary.strong"
+                  onClick={() => handleMenuClick(menu.path)}
+                  active={location.pathname === menu.path}
+                >
+                  {menu.icon}
+                </CommonMenuItem>
+              ))}
+            </Drawer>
           </Box>
         </Box>
-      </Box>
-    </AppBar>
+
+        {/* Navigation Menu */}
+        <Box
+          sx={{
+            display: {
+              xs: "none",
+              sm: "none",
+              md: "none",
+              lg: "flex",
+              xl: "flex",
+            },
+            backgroundColor: "white",
+            transition: "background-color 0.2s ease",
+            justifyContent: "center",
+            width: "100%",
+            px: { xs: 2, sm: 2, md: 2, lg: 0, xl: 0 },
+            boxShadow: "0 2px 4px rgba(0,0,0,0.08)",
+          }}
+        >
+          <Box
+            maxWidth={1360}
+            width={1360}
+            py={2}
+            display={"flex"}
+            justifyContent={"flex-end"}
+            alignItems={"center"}
+          >
+            <Box display={"flex"}>
+              {navItems.map((menu, index) => (
+                <CommonMenuItem
+                  key={index}
+                  label={menu.name}
+                  path={menu.path}
+                  color="primary.strong"
+                  active={location.pathname === menu.path}
+                />
+              ))}
+            </Box>
+          </Box>
+        </Box>
+      </AppBar>
+    </HideOnScroll>
   );
 }
 

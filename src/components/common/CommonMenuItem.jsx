@@ -7,16 +7,23 @@ import { useHandleNavigate } from "@/utils";
 
 function CommonMenuItem({
   children,
-  variant = "body3",
+  variant = "body1",
   color = "white",
   label = "Menu",
   path = "/",
+  active,
   sx = {},
 }) {
   const handleNavigate = useHandleNavigate();
   return (
     <MenuItem
-      sx={{ ...sx, display: "flex", alignItems: "center", gap: 1 }}
+      sx={{
+        ...sx,
+        display: "flex",
+        alignItems: "center",
+        gap: 1,
+        backgroundColor: active ? "rgba(0,0,0,0.05)" : "transparent",
+      }}
       onClick={() => handleNavigate(path)}
     >
       <Box sx={{ color: color }}>{children}</Box>

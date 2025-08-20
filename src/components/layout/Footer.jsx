@@ -14,6 +14,10 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import Typography from "@mui/material/Typography";
 import CommonIconButton from "../common/CommonIconButton";
 import CommonMenuItem from "../common/CommonMenuItem";
+
+import { FaTiktok } from "react-icons/fa";
+import { SiZalo } from "react-icons/si";
+
 import { PATHS } from "@/constants";
 import { useHandleNavigate } from "@/utils";
 
@@ -29,11 +33,9 @@ const serviceItems = [
 ];
 
 const socialItems = [
-  <FacebookOutlinedIcon />,
-  <InstagramIcon />,
-  <YouTubeIcon />,
-  <TwitterIcon />,
-  <LinkedInIcon />,
+  { path: "", icon: <FacebookOutlinedIcon /> },
+  { path: "", icon: <FaTiktok /> },
+  { path: "", icon: <SiZalo /> },
 ];
 
 function Footer() {
@@ -70,17 +72,14 @@ function Footer() {
             alignItems={{
               xs: "center",
               sm: "center",
-              md: "flex-start",
+              md: "center",
               lg: "flex-start",
               xl: "flex-start",
             }}
             gap={1}
           >
-            <Typography variant="h3" color="initial">
-              Logo
-            </Typography>
             <Typography
-              variant="body3"
+              variant="body1"
               color="white"
               sx={{
                 display: {
@@ -174,10 +173,10 @@ function Footer() {
             <Typography variant="h5" color="white" mb={2} fontWeight={700}>
               Liên hệ
             </Typography>
-            <Typography variant="body3" color="white">
+            <Typography variant="body1" color="white">
               Email
             </Typography>
-            <Typography variant="body3" color="white">
+            <Typography variant="body1" color="white">
               Phone
             </Typography>
           </Grid>
@@ -199,10 +198,12 @@ function Footer() {
               Kết nối
             </Typography>
             <Box display={"flex"} gap={1}>
-              {socialItems.map((icon, index) => (
-                <CommonIconButton key={index} sx={{ color: "white" }}>
-                  {icon}
-                </CommonIconButton>
+              {socialItems.map((item, index) => (
+                <a href={item.path} key={index} style={{ color: "white" }}>
+                  <CommonIconButton sx={{ color: "white", fontSize: 20 }}>
+                    {item.icon}
+                  </CommonIconButton>
+                </a>
               ))}
             </Box>
           </Grid>

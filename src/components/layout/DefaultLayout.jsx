@@ -1,14 +1,22 @@
 import React from "react";
 
 import Box from "@mui/material/Box";
+
 import Header from "./Header";
 import Footer from "./Footer";
 
+import Background from "@assets/background/background_3.jpg";
+
 function DefaultLayout({ children }) {
   return (
-    <Box>
+    <Box
+    // sx={{
+    //   backgroundImage: `url(${Background})`,
+    //   backgroundRepeat: "repeat-y",
+    // }}
+    >
       <Header />
-      <Box display={"flex"} flexDirection={"column"}>
+      <Box display={"flex"} flexDirection={"column"} mb={20}>
         {children}
       </Box>
       <Footer />
