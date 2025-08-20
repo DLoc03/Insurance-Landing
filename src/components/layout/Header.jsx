@@ -29,7 +29,7 @@ import CommonIconButton from "../common/CommonIconButton";
 import CommonMenuItem from "../common/CommonMenuItem";
 
 import HideOnScroll from "@/contexts/HideOnScroll";
-import { PATHS } from "@/constants";
+import { CONTACT, PATHS, SOCIAL_URL } from "@/constants";
 import { useHandleNavigate } from "@/utils";
 import { useLocation } from "react-router-dom";
 
@@ -67,9 +67,9 @@ const navItems = [
 ];
 
 const socialItems = [
-  { path: "", icon: <FacebookOutlinedIcon /> },
-  { path: "", icon: <FaTiktok /> },
-  { path: "", icon: <SiZalo /> },
+  { path: SOCIAL_URL.FACEBOOK, icon: <FacebookOutlinedIcon /> },
+  { path: SOCIAL_URL.TIKTOK, icon: <FaTiktok /> },
+  { path: SOCIAL_URL.ZALO, icon: <SiZalo /> },
 ];
 
 function Header() {
@@ -151,9 +151,17 @@ function Header() {
             >
               <Box display={"flex"} gap={1} alignItems={"center"}>
                 <FmdGoodOutlinedIcon />
-                <Typography variant="body1" color="white">
-                  Address
-                </Typography>
+                <a href={CONTACT.ADDRESS} style={{ textDecoration: "none" }}>
+                  <Typography
+                    variant="body2"
+                    color="white"
+                    sx={{
+                      ":hover": { color: "secondary.main", cursor: "pointer" },
+                    }}
+                  >
+                    Phường 15, Đống Đa, TP. HCM
+                  </Typography>
+                </a>
               </Box>
               <Divider
                 orientation="vertical"
@@ -162,9 +170,17 @@ function Header() {
               />
               <Box display={"flex"} gap={1} alignItems={"center"}>
                 <MailOutlineOutlinedIcon />
-                <Typography variant="body1" color="white">
-                  Email
-                </Typography>
+                <a href={CONTACT.EMAIL} style={{ textDecoration: "none" }}>
+                  <Typography
+                    variant="body2"
+                    color="white"
+                    sx={{
+                      ":hover": { color: "secondary.main", cursor: "pointer" },
+                    }}
+                  >
+                    tuyenpham103@gmail.com
+                  </Typography>
+                </a>
               </Box>
             </Box>
 
@@ -210,15 +226,12 @@ function Header() {
               open={menuOpen}
               onClose={toggleDrawer(false)}
             >
-              <Typography variant="h6" mx={"auto"} my={2}>
-                Logo
-              </Typography>
               {navItems.map((menu, index) => (
                 <CommonMenuItem
                   key={index}
                   label={menu.name}
                   color="primary.strong"
-                  onClick={() => handleMenuClick(menu.path)}
+                  path={menu.path}
                   active={location.pathname === menu.path}
                 >
                   {menu.icon}

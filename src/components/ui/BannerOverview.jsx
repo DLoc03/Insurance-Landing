@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import Wave from "react-wavify";
+
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
@@ -15,6 +17,7 @@ import Banner3 from "@assets/banner/banner_3.jpg";
 import CommonButton from "../common/CommonButton";
 import { useHandleNavigate } from "@/utils";
 import { PATHS } from "@/constants";
+import CommonWave from "../common/CommonWave";
 
 const banners = [Banner1, Banner2, Banner3];
 
@@ -147,7 +150,8 @@ export default function BannerSlider() {
             variant="h4"
             color="white"
             textAlign={"center"}
-            px={{ xs: 2, sm: 0 }}
+            px={{ xs: 8, md: 0 }}
+            mt={1}
           >
             “Dịch vụ bảo hiểm toàn diện, linh hoạt và uy tín – đồng hành cùng
             bạn mỗi bước đường đời.”

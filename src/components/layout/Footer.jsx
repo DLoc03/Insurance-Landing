@@ -18,7 +18,7 @@ import CommonMenuItem from "../common/CommonMenuItem";
 import { FaTiktok } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
 
-import { PATHS } from "@/constants";
+import { CONTACT, PATHS, SOCIAL_URL } from "@/constants";
 import { useHandleNavigate } from "@/utils";
 
 const serviceItems = [
@@ -33,9 +33,9 @@ const serviceItems = [
 ];
 
 const socialItems = [
-  { path: "", icon: <FacebookOutlinedIcon /> },
-  { path: "", icon: <FaTiktok /> },
-  { path: "", icon: <SiZalo /> },
+  { path: SOCIAL_URL.FACEBOOK, icon: <FacebookOutlinedIcon /> },
+  { path: SOCIAL_URL.TIKTOK, icon: <FaTiktok /> },
+  { path: SOCIAL_URL.ZALO, icon: <SiZalo /> },
 ];
 
 function Footer() {
@@ -91,14 +91,9 @@ function Footer() {
                 },
               }}
             >
-              Chúng tôi là đơn vị tư vấn và cung cấp dịch vụ bảo hiểm chuyên
-              nghiệp, đồng hành cùng khách hàng trong việc lựa chọn những giải
-              pháp an toàn và phù hợp nhất. Với sự tận tâm, kinh nghiệm và uy
-              tín, Ms. Phạm Tuyền không chỉ mang đến các gói bảo hiểm đa dạng mà
-              còn chú trọng vào việc lắng nghe, thấu hiểu nhu cầu riêng của từng
-              khách hàng. Chúng tôi tin rằng, một dịch vụ bảo hiểm tốt không chỉ
-              bảo vệ tài sản và sức khỏe, mà còn mang lại sự an tâm và niềm tin
-              cho mỗi gia đình, mỗi doanh nghiệp.
+              Ms. Phạm Tuyên không chỉ là một người tư vấn bảo hiểm, mà còn là
+              người bạn đồng hành tin cậy, luôn đặt lợi ích của khách hàng lên
+              hàng đầu và cam kết mang đến những giá trị lâu dài.
             </Typography>
           </Grid>
           <Grid
@@ -127,7 +122,7 @@ function Footer() {
             gap={1}
           >
             <Typography variant="h5" color="white" mb={2} fontWeight={700}>
-              Về chúng tôi
+              Về dịch vụ
             </Typography>
             <Box
               display={"flex"}
@@ -173,12 +168,28 @@ function Footer() {
             <Typography variant="h5" color="white" mb={2} fontWeight={700}>
               Liên hệ
             </Typography>
-            <Typography variant="body1" color="white">
-              Email
-            </Typography>
-            <Typography variant="body1" color="white">
-              Phone
-            </Typography>
+            <a href={CONTACT.EMAIL} style={{ textDecoration: "none" }}>
+              <Typography
+                variant="body1"
+                color="white"
+                sx={{
+                  ":hover": { color: "secondary.main", cursor: "pointer" },
+                }}
+              >
+                tuyenpham103@gmail.com
+              </Typography>
+            </a>
+            <a href={CONTACT.ADDRESS} style={{ textDecoration: "none" }}>
+              <Typography
+                variant="body1"
+                color="white"
+                sx={{
+                  ":hover": { color: "primary.strong", cursor: "pointer" },
+                }}
+              >
+                Phường 15, Đống Đa, TP. HCM
+              </Typography>
+            </a>
           </Grid>
           <Grid
             item
