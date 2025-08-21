@@ -53,7 +53,7 @@ const topServices = [
   },
 ];
 
-function ServicesOverview({ label = "Các gói sản phẩm nổi bật khác" }) {
+function ServicesOverview({ label = "Các dịch vụ tư vấn" }) {
   return (
     <Box
       width={"100%"}

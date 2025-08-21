@@ -243,14 +243,21 @@ function Service() {
               </motion.div>
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
-              <Box
-                height={{ xs: 200, md: "100%" }}
-                width={"100%"}
-                sx={{
-                  backgroundImage: `url(${ServiceGuest})`,
-                  backgroundSize: "cover",
-                }}
-              />
+              <motion.div
+                variants={fadeIn("up", 0.4)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ amount: 0.2 }}
+              >
+                <Box
+                  height={{ xs: 200, sm: 258, lg: 184 }}
+                  width={"100%"}
+                  sx={{
+                    backgroundImage: `url(${ServiceGuest})`,
+                    backgroundSize: "cover",
+                  }}
+                />
+              </motion.div>
             </Grid>
           </>
         )}
@@ -263,7 +270,7 @@ function Service() {
               viewport={{ amount: 0.2 }}
             >
               <Typography variant="h3" color="initial" textAlign={"center"}>
-                Các sản phẩm nổi bật
+                Các gói dịch vụ nổi bật
               </Typography>
             </motion.div>
           </Grid>
@@ -282,14 +289,18 @@ function Service() {
         {keyword ? (
           results.length > 0 ? (
             results.map((service, index) => (
-              <Grid size={{ xs: 4, md: 2 }} key={index}>
+              <Grid size={{ xs: 6, md: 3, lg: 2 }} key={index}>
                 <motion.div
                   variants={fadeIn("up", index * 0.2)}
                   initial="hidden"
                   whileInView="show"
                   viewport={{ amount: 0.2 }}
                 >
-                  <ServiceCard service={service} imageSize="40px" />
+                  <ServiceCard
+                    service={service}
+                    imageSize="40px"
+                    height={320}
+                  />
                 </motion.div>
               </Grid>
             ))
@@ -302,14 +313,18 @@ function Service() {
           topServices
             .filter((service) => service.key === "normal")
             .map((service, index) => (
-              <Grid size={{ xs: 4, md: 2 }} key={index}>
+              <Grid size={{ xs: 6, md: 3, lg: 2 }} key={index}>
                 <motion.div
                   variants={fadeIn("up", index * 0.2)}
                   initial="hidden"
                   whileInView="show"
                   viewport={{ amount: 0.2 }}
                 >
-                  <ServiceCard service={service} imageSize="40px" />
+                  <ServiceCard
+                    service={service}
+                    imageSize="40px"
+                    height={320}
+                  />
                 </motion.div>
               </Grid>
             ))
@@ -338,14 +353,18 @@ function Service() {
               justifyContent={"center"}
             >
               {topService.map((service, index) => (
-                <Grid key={index} size={{ xs: 4, md: 2 }}>
+                <Grid size={{ xs: 6, md: 3, lg: 2 }} key={index}>
                   <motion.div
                     variants={fadeIn("up", index * 0.2)}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ amount: 0.2 }}
                   >
-                    <ServiceCard service={service} imageSize="40px" />
+                    <ServiceCard
+                      service={service}
+                      imageSize="40px"
+                      height={320}
+                    />
                   </motion.div>
                 </Grid>
               ))}

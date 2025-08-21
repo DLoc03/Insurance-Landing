@@ -52,7 +52,7 @@ export default function CommonSection({
               style={{
                 display: "flex",
                 justifyContent: "center",
-                height: "360px",
+                height: isMobile ? "240px" : "300px",
               }}
             >
               <motion.div
@@ -71,6 +71,7 @@ export default function CommonSection({
                   labelColor={labelColor}
                   variant={variant}
                   imageSize={imageSize}
+                  height={160}
                 />
               </motion.div>
             </SwiperSlide>

@@ -147,6 +147,7 @@ function AdvantageSection() {
         >
           {advantageList.map((advantage, index) => (
             <motion.div
+              key={index}
               variants={fadeIn("up", index * 0.2)}
               initial="hidden"
               whileInView="show"
@@ -192,6 +193,7 @@ function AdvantageSection() {
         >
           {advantageList.map((advantage, index) => (
             <motion.div
+              key={index}
               variants={fadeIn("up", index * 0.2)}
               initial="hidden"
               whileInView="show"
@@ -251,7 +253,7 @@ function AdvantageSection() {
                     mt: 1,
                     mb: 2,
                     transition: "all 0.3s ease",
-                    width: "100%",
+                    width: { xs: 100, md: "100%" },
                   }}
                 />
                 <Box>

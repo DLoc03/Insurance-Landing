@@ -94,25 +94,25 @@ function CustomerReviewSlider({ reviews }) {
         pagination={{ clickable: true }}
         style={{ width: "100%" }}
       >
-        <motion.div
-          variants={fadeIn("up", 2)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ amount: 0.2 }}
-        >
-          {reviews.map((review, index) => (
-            <SwiperSlide
-              key={index}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                height: isMobile ? "500px" : "380px",
-              }}
+        {reviews.map((review, index) => (
+          <SwiperSlide
+            key={index}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              height: isMobile ? "500px" : "380px",
+            }}
+          >
+            <motion.div
+              variants={fadeIn("up", index * 0.1)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ amount: 0.2 }}
             >
               <CustomerReviewCard {...review} />
-            </SwiperSlide>
-          ))}
-        </motion.div>
+            </motion.div>{" "}
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Box>
   );

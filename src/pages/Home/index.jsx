@@ -17,7 +17,7 @@ function Home() {
       </Box>
       <Introduction />
       <Box mt={{ xs: 4, md: 8 }}>
-        <ServicesOverview label="Các gói sản phẩm nổi bật của Ms. Phạm Tuyền" />
+        <ServicesOverview />
       </Box>
       <Box mt={{ xs: 0, lg: 20 }}>
         <AdvantageSection />

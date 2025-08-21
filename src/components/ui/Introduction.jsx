@@ -98,12 +98,12 @@ function Introduction() {
               viewport={{ amount: 0.2 }}
             >
               <Typography
-                variant="h1"
+                variant="h2"
                 color="primary.main"
                 fontWeight={500}
                 textAlign={{ xs: "center", md: "left" }}
               >
-                Về Ms. Tuyền
+                Về Ms. Phạm Tuyền
               </Typography>
             </motion.div>
             <motion.div
@@ -134,7 +134,7 @@ function Introduction() {
               {badgeItems.map((badge, index) => (
                 <motion.div
                   key={index}
-                  variants={fadeIn("left", index * 0.2)}
+                  variants={fadeIn("up", index * 0.2)}
                   initial="hidden"
                   whileInView="show"
                   viewport={{ amount: 0.2 }}
@@ -339,93 +339,101 @@ function Introduction() {
           >
             {listImage.map((src, index) => {
               return (
-                <Box
+                <motion.div
                   key={index}
-                  sx={{
-                    width: "100%",
-                    height: 260,
-                    textAlign: "center",
-                    cursor: "pointer",
-                  }}
+                  variants={fadeIn("up", index * 0.2)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ amount: 0.2 }}
                 >
                   <Box
+                    key={index}
                     sx={{
-                      position: "relative",
                       width: "100%",
                       height: 260,
-                      borderRadius: 2,
-                      overflow: "hidden",
-                      boxShadow: "0 15px 25px rgba(0,0,0,0.3)",
-
-                      "&:hover .overlay": {
-                        opacity: 0.6,
-                      },
-                      "&:hover .subtitle": {
-                        transform: "translate(-50%, -50%) translateY(0)",
-                        opacity: 1,
-                      },
+                      textAlign: "center",
+                      cursor: "pointer",
                     }}
                   >
                     <Box
-                      component="img"
-                      src={src.image}
-                      alt={src.title}
                       sx={{
+                        position: "relative",
                         width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                    {/* Overlay */}
-                    <Box
-                      className="overlay"
-                      sx={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        backgroundColor: "black",
-                        opacity: 0,
-                        transition: "opacity 0.3s ease",
-                      }}
-                    />
-                    {/* Title */}
-                    <Typography
-                      variant="h6"
-                      color="white"
-                      sx={{
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)",
-                        fontWeight: 600,
-                        textShadow: "0 2px 10px rgba(0,0,0,0.6)",
-                        zIndex: 2,
+                        height: 260,
+                        borderRadius: 2,
+                        overflow: "hidden",
+                        boxShadow: "0 15px 25px rgba(0,0,0,0.3)",
+
+                        "&:hover .overlay": {
+                          opacity: 0.6,
+                        },
+                        "&:hover .subtitle": {
+                          transform: "translate(-50%, -50%) translateY(0)",
+                          opacity: 1,
+                        },
                       }}
                     >
-                      {src.title}
-                    </Typography>
-                    <Typography
-                      className="subtitle"
-                      variant="subtitle1"
-                      color="white"
-                      sx={{
-                        position: "absolute",
-                        bottom: 20,
-                        left: "50%",
-                        transform: "translate(-50%, 20px)",
-                        fontWeight: 500,
-                        textShadow: "0 2px 10px rgba(0,0,0,0.6)",
-                        opacity: 0,
-                        transition: "all 0.3s ease",
-                        zIndex: 2,
-                      }}
-                    >
-                      {src.subTitle}
-                    </Typography>
+                      <Box
+                        component="img"
+                        src={src.image}
+                        alt={src.title}
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                      {/* Overlay */}
+                      <Box
+                        className="overlay"
+                        sx={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          backgroundColor: "black",
+                          opacity: 0,
+                          transition: "opacity 0.3s ease",
+                        }}
+                      />
+                      {/* Title */}
+                      <Typography
+                        variant="h6"
+                        color="white"
+                        sx={{
+                          position: "absolute",
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          fontWeight: 600,
+                          textShadow: "0 2px 10px rgba(0,0,0,0.6)",
+                          zIndex: 2,
+                        }}
+                      >
+                        {src.title}
+                      </Typography>
+                      <Typography
+                        className="subtitle"
+                        variant="subtitle1"
+                        color="white"
+                        sx={{
+                          position: "absolute",
+                          bottom: 20,
+                          left: "50%",
+                          transform: "translate(-50%, 20px)",
+                          fontWeight: 500,
+                          textShadow: "0 2px 10px rgba(0,0,0,0.6)",
+                          opacity: 0,
+                          transition: "all 0.3s ease",
+                          zIndex: 2,
+                        }}
+                      >
+                        {src.subTitle}
+                      </Typography>
+                    </Box>
                   </Box>
-                </Box>
+                </motion.div>
               );
             })}
           </Box>

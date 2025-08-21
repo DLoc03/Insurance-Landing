@@ -148,7 +148,7 @@ function ServiceDetail() {
         )}
       </Grid>
       <Box width={"100%"}>
-        <ServicesOverview />
+        <ServicesOverview label="Các dịch vụ nổi bật khác" />
       </Box>
       <Box mt={{ xs: 12, md: 16 }} width={"100%"}>
         <GuestReview />

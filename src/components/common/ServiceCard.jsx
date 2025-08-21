@@ -16,6 +16,7 @@ function ServiceCard({
   variant = "h4",
   imageSize = "100%",
   isShowDesc = true,
+  height = 280,
   sx = {},
 }) {
   return (
@@ -30,7 +31,7 @@ function ServiceCard({
           gap: 1,
           backgroundColor: "white",
           p: 2,
-          height: 280,
+          height: height,
           borderRadius: 2,
           boxShadow: "0 5px 25px 0 rgb(0 0 0 / .1)",
           width: "100%",
@@ -38,16 +39,13 @@ function ServiceCard({
           cursor: "pointer",
           transition: "all 0.3s ease",
           "&:hover": {
-            backgroundColor: "secondary.main",
+            background:
+              "linear-gradient(0deg,rgba(153, 240, 255, 1) 0%, rgba(252, 255, 204, 1) 100%)",
             transform: "translateY(-10px)",
             "& img": {
               animation: `${flipX} 1s linear infinite`,
               filter: "brightness(0.8)",
             },
-            "& h4, & h5, & h6, & .MuiTypography-root": {
-              color: "white",
-            },
-            "& p": { color: "white" },
           },
         }}
       >
