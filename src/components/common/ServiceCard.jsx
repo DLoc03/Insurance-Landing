@@ -75,14 +75,13 @@ function ServiceCard({
           color={labelColor}
           fontWeight={700}
           textAlign="center"
-          flex={1}
+          minHeight={{ xs: 20, lg: 50 }}
         >
           {service.name}
         </Typography>
 
         {isShowDesc && (
           <Typography
-            flex={1}
             variant="body1"
             color="text.primary"
             mt={2}
