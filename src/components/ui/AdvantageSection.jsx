@@ -159,7 +159,7 @@ function AdvantageSection() {
                   boxShadow="0 5px 25px 0 rgb(0 0 0 / .1)"
                   height={120}
                   width={120}
-                  p={{ xs: 1, md: 4 }}
+                  p={{ xs: 2, md: 4 }}
                   sx={{
                     backgroundColor: "white",
                     cursor: "pointer",
@@ -188,7 +188,7 @@ function AdvantageSection() {
           flexDirection={"column"}
           justifyContent={"space-around"}
           height={{ xs: "100%", md: 800 }}
-          px={{ xs: 0, md: 12 }}
+          px={{ xs: 2, md: 12 }}
           gap={{ xs: 1, md: 0 }}
         >
           {advantageList.map((advantage, index) => (
