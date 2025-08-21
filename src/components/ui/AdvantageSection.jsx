@@ -46,11 +46,10 @@ function AdvantageSection() {
   const [hoverIndex, setHoverIndex] = useState(null);
 
   return (
-    <Box py={2} width={"100%"}>
+    <Box width={"100%"}>
       <Grid
         container
         display={"flex"}
-        mt={{ xs: 2, md: 8 }}
         position={"relative"}
         justifyContent={"center"}
       >

@@ -96,7 +96,7 @@ function Introduction() {
               <span style={{ fontWeight: 700, color: "#0097b2" }}>
                 tư vấn tài chính & bảo hiểm
               </span>
-              , Ms. Phạm Tuyên đã đồng hành cùng hàng trăm khách hàng trên hành
+              , Ms. Phạm Tuyền đã đồng hành cùng hàng trăm khách hàng trên hành
               trình xây dựng kế hoạch tài chính an toàn và bền vững.
             </Typography>
             <Box

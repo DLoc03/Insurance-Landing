@@ -5,15 +5,11 @@ import AppBar from "@mui/material/AppBar";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
-import { alpha } from "@mui/material";
 
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
+
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import HomeIcon from "@mui/icons-material/Home";
@@ -32,6 +28,7 @@ import HideOnScroll from "@/contexts/HideOnScroll";
 import { CONTACT, PATHS, SOCIAL_URL } from "@/constants";
 import { useHandleNavigate } from "@/utils";
 import { useLocation } from "react-router-dom";
+import CommonSearchBar from "../common/CommonSearchBar";
 
 const navItems = [
   {
@@ -54,11 +51,11 @@ const navItems = [
     name: "Tại sao chọn Ms. Phạm Tuyền?",
     icon: <ThumbUpAltIcon />,
   },
-  {
-    path: PATHS.GUEST_RATING,
-    name: "Cảm nghĩ khách hàng",
-    icon: <ChatBubbleOutlineIcon />,
-  },
+  // {
+  //   path: PATHS.GUEST_RATING,
+  //   name: "Cảm nghĩ khách hàng",
+  //   icon: <ChatBubbleOutlineIcon />,
+  // },
   {
     path: PATHS.CONTACT,
     name: "Liên Hệ",
@@ -96,11 +93,6 @@ function Header() {
 
   const toggleDrawer = (state) => () => {
     setMenuOpen(state);
-  };
-
-  const handleMenuClick = (path) => {
-    handleNavigate(path);
-    setMenuOpen(false);
   };
 
   return (
@@ -151,7 +143,11 @@ function Header() {
             >
               <Box display={"flex"} gap={1} alignItems={"center"}>
                 <FmdGoodOutlinedIcon />
-                <a href={CONTACT.ADDRESS} style={{ textDecoration: "none" }}>
+                <a
+                  href={CONTACT.ADDRESS}
+                  target="_blank"
+                  style={{ textDecoration: "none" }}
+                >
                   <Typography
                     variant="body2"
                     color="white"
@@ -170,7 +166,11 @@ function Header() {
               />
               <Box display={"flex"} gap={1} alignItems={"center"}>
                 <MailOutlineOutlinedIcon />
-                <a href={CONTACT.EMAIL} style={{ textDecoration: "none" }}>
+                <a
+                  href={CONTACT.EMAIL}
+                  target="_blank"
+                  style={{ textDecoration: "none" }}
+                >
                   <Typography
                     variant="body2"
                     color="white"
@@ -196,7 +196,12 @@ function Header() {
               gap={1}
             >
               {socialItems.map((item, index) => (
-                <a href={item.path} key={index} style={{ color: "white" }}>
+                <a
+                  href={item.path}
+                  target="_blank"
+                  key={index}
+                  style={{ color: "white" }}
+                >
                   <CommonIconButton sx={{ color: "white", fontSize: 20 }}>
                     {item.icon}
                   </CommonIconButton>
@@ -213,7 +218,10 @@ function Header() {
                 lg: "none",
                 xl: "none",
               }}
+              justifyContent={"space-between"}
+              width={"100%"}
             >
+              <CommonSearchBar />
               <CommonIconButton
                 sx={{ color: "white" }}
                 onClick={toggleDrawer(true)}
@@ -221,11 +229,7 @@ function Header() {
                 <MenuIcon />
               </CommonIconButton>
             </Box>
-            <Drawer
-              anchor="right"
-              open={menuOpen}
-              onClose={toggleDrawer(false)}
-            >
+            <Drawer anchor="left" open={menuOpen} onClose={toggleDrawer(false)}>
               {navItems.map((menu, index) => (
                 <CommonMenuItem
                   key={index}
@@ -264,9 +268,10 @@ function Header() {
             width={1360}
             py={2}
             display={"flex"}
-            justifyContent={"flex-end"}
+            justifyContent={"space-between"}
             alignItems={"center"}
           >
+            <CommonSearchBar />
             <Box display={"flex"}>
               {navItems.map((menu, index) => (
                 <CommonMenuItem

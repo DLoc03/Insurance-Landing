@@ -2,6 +2,7 @@ const PATHS = {
   HOME: "/",
   ABOUT: "/about",
   SERVICE: "/service",
+  SERVICE_SEARCH: "/service/search",
   WHY_CHOOSE_US: "/why-choose-us",
   GUEST_RATING: "/rating",
   CONTACT: "/contact",

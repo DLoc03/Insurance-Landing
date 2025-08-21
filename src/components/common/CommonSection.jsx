@@ -33,19 +33,24 @@ export default function CommonSection({
     >
       {isMobile ? (
         <Swiper
-          spaceBetween={16}
-          slidesPerView={"auto"}
+          slidesPerView={1}
           centeredSlides={true}
           centeredSlidesBounds={true}
           pagination={{ clickable: true }}
           modules={[Pagination]}
           style={{
             width: "100%",
-            height: 320,
           }}
         >
           {listData.map((item, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide
+              key={index}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                height: "320px",
+              }}
+            >
               <ServiceCard
                 service={item}
                 labelColor={labelColor}

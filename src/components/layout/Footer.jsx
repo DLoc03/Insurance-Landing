@@ -67,15 +67,9 @@ function Footer() {
           <Grid
             item
             size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }}
-            display={"flex"}
+            display={{ xs: "none", lg: "flex" }}
             flexDirection={"column"}
-            alignItems={{
-              xs: "center",
-              sm: "center",
-              md: "center",
-              lg: "flex-start",
-              xl: "flex-start",
-            }}
+            alignItems={"flex-start"}
             gap={1}
           >
             <Typography
@@ -91,9 +85,10 @@ function Footer() {
                 },
               }}
             >
-              Ms. Phạm Tuyên không chỉ là một người tư vấn bảo hiểm, mà còn là
-              người bạn đồng hành tin cậy, luôn đặt lợi ích của khách hàng lên
-              hàng đầu và cam kết mang đến những giá trị lâu dài.
+              Ms. Phạm Tuyền luôn đặt lợi ích của khách hàng lên hàng đầu, lấy
+              sự hiểu biết sâu sắc và tận tâm làm kim chỉ nam trong mọi hoạt
+              động tư vấn. Với mong muốn giúp mỗi cá nhân, gia đình Việt xây
+              dựng một nền tảng tài chính vững chắc, chị không chỉ tư vấn sản
             </Typography>
           </Grid>
           <Grid
@@ -109,13 +104,13 @@ function Footer() {
           ></Grid>
           <Grid
             item
-            size={{ xs: 12, sm: 12, md: 2, lg: 2, xl: 2 }}
+            size={{ xs: 12, sm: 12, md: 4, lg: 2, xl: 2 }}
             display={"flex"}
             flexDirection={"column"}
             alignItems={{
               xs: "center",
               sm: "center",
-              md: "flex-start",
+              md: "center",
               lg: "flex-start",
               xl: "flex-start",
             }}
@@ -153,7 +148,7 @@ function Footer() {
           </Grid>
           <Grid
             item
-            size={{ xs: 12, sm: 12, md: 2, lg: 2, xl: 2 }}
+            size={{ xs: 12, sm: 12, md: 4, lg: 2, xl: 2 }}
             display={"flex"}
             flexDirection={"column"}
             alignItems={{
@@ -168,7 +163,11 @@ function Footer() {
             <Typography variant="h5" color="white" mb={2} fontWeight={700}>
               Liên hệ
             </Typography>
-            <a href={CONTACT.EMAIL} style={{ textDecoration: "none" }}>
+            <a
+              href={CONTACT.EMAIL}
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
               <Typography
                 variant="body1"
                 color="white"
@@ -179,7 +178,11 @@ function Footer() {
                 tuyenpham103@gmail.com
               </Typography>
             </a>
-            <a href={CONTACT.ADDRESS} style={{ textDecoration: "none" }}>
+            <a
+              href={CONTACT.ADDRESS}
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
               <Typography
                 variant="body1"
                 color="white"
@@ -193,7 +196,7 @@ function Footer() {
           </Grid>
           <Grid
             item
-            size={{ xs: 12, sm: 12, md: 2, lg: 2, xl: 2 }}
+            size={{ xs: 12, sm: 12, md: 4, lg: 2, xl: 2 }}
             display={"flex"}
             flexDirection={"column"}
             alignItems={{
@@ -210,7 +213,12 @@ function Footer() {
             </Typography>
             <Box display={"flex"} gap={1}>
               {socialItems.map((item, index) => (
-                <a href={item.path} key={index} style={{ color: "white" }}>
+                <a
+                  href={item.path}
+                  target="_blank"
+                  key={index}
+                  style={{ color: "white" }}
+                >
                   <CommonIconButton sx={{ color: "white", fontSize: 20 }}>
                     {item.icon}
                   </CommonIconButton>

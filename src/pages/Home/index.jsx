@@ -1,12 +1,13 @@
 import React from "react";
 
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+
 import BannerOverView from "@/components/ui/BannerOverview";
 import Introduction from "@/components/ui/Introduction";
 import ServicesOverview from "@/components/ui/ServicesOverview";
 import AdvantageSection from "@/components/ui/AdvantageSection";
 import GuestReview from "@/components/ui/GuestReview";
+import ContactForm from "@/components/ui/ContactForm";
 
 function Home() {
   return (
@@ -24,6 +25,7 @@ function Home() {
       <Box my={8}>
         <GuestReview />
       </Box>
+      <ContactForm />
     </Box>
   );
 }

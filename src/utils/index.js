@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
+import { items } from "@/datas/service.json";
+
 export function useHandleNavigate() {
   const navigate = useNavigate();
 
@@ -11,3 +13,10 @@ export function useHandleNavigate() {
 
   return handleNavigate;
 }
+
+export const getServiceByKeyword = (keyword) => {
+  const lowerKeyword = keyword.toLowerCase();
+  return items.filter(
+    (item) => item.name && item.name.toLowerCase().includes(lowerKeyword)
+  );
+};

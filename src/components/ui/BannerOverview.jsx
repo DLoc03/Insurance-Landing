@@ -17,7 +17,6 @@ import Banner3 from "@assets/banner/banner_3.jpg";
 import CommonButton from "../common/CommonButton";
 import { useHandleNavigate } from "@/utils";
 import { PATHS } from "@/constants";
-import CommonWave from "../common/CommonWave";
 
 const banners = [Banner1, Banner2, Banner3];
 
