@@ -7,7 +7,6 @@ import Divider from "@mui/material/Divider";
 import CommonOverlay from "../common/CommonOverlay";
 
 import EmailIcon from "@mui/icons-material/Email";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 
 import Background from "@assets/background/background_3.png";
@@ -29,11 +28,6 @@ const contactList = [
     icon: <LocalPhoneIcon />,
     name: "Điện thoại",
     value: "098.310.0383",
-  },
-  {
-    icon: <LocationOnIcon />,
-    name: "Địa chỉ",
-    value: "Phường 15, Đống Đa, TP. HCM",
   },
 ];
 
@@ -71,7 +65,7 @@ function ContactForm() {
       <Grid
         container
         spacing={2}
-        px={{ xs: 2, md: 0 }}
+        px={{ xs: 2, lg: 0 }}
         width={{ xs: "100%", md: 1360 }}
         zIndex={10}
       >

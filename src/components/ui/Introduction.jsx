@@ -90,7 +90,7 @@ function Introduction() {
             <Typography
               variant="body1"
               color="initial"
-              textAlign={{ xs: "center", md: "left" }}
+              textAlign={{ xs: "justify", md: "left" }}
             >
               Với nhiều năm kinh nghiệm trong lĩnh vực{" "}
               <span style={{ fontWeight: 700, color: "#0097b2" }}>

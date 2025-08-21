@@ -1,13 +1,8 @@
-import React, { useState } from "react";
-import {
-  Box,
-  Typography,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-} from "@mui/material";
+import React from "react";
+
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+
 import { keyframes } from "@mui/system";
 
 const flipX = keyframes`
@@ -23,16 +18,10 @@ function ServiceCard({
   isShowDesc = true,
   sx = {},
 }) {
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   return (
     <>
       {/* Card */}
       <Box
-        onClick={handleOpen}
         sx={{
           ...sx,
           display: "flex",
@@ -91,27 +80,6 @@ function ServiceCard({
           </Typography>
         )}
       </Box>
-
-      <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
-        <DialogTitle>
-          Thông tin gói <span style={{ fontWeight: 700 }}>{service.name}</span>
-        </DialogTitle>
-        <DialogContent dividers>
-          <Typography variant="body1" gutterBottom>
-            {service.desc}
-          </Typography>
-          {service.fullInfo && (
-            <Typography variant="body2" color="text.secondary">
-              {service.fullInfo}
-            </Typography>
-          )}
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Đóng
-          </Button>
-        </DialogActions>
-      </Dialog>
     </>
   );
 }

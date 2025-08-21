@@ -119,7 +119,7 @@ function ServiceDetail() {
         {results.length > 0 ? (
           results.map((service, index) => (
             <Grid key={index} size={{ xs: 4, md: 2 }}>
-              <ServiceCard service={service} isShowDesc={false} />
+              <ServiceCard service={service} imageSize={"40px"} />
             </Grid>
           ))
         ) : (

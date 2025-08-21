@@ -179,7 +179,7 @@ function Footer() {
               </Typography>
             </a>
             <a
-              href={CONTACT.ADDRESS}
+              href={CONTACT.PHONE}
               target="_blank"
               style={{ textDecoration: "none" }}
             >
@@ -190,7 +190,7 @@ function Footer() {
                   ":hover": { color: "primary.strong", cursor: "pointer" },
                 }}
               >
-                Phường 15, Đống Đa, TP. HCM
+                0938.271.602
               </Typography>
             </a>
           </Grid>

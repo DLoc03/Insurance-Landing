@@ -213,7 +213,7 @@ function About() {
           >
             {topServices.slice(0, 4).map((service, index) => (
               <Grid size={{ xs: 6, md: 2 }} key={index}>
-                <ServiceCard service={service} isShowDesc={false} />
+                <ServiceCard service={service} imageSize="40px" />
               </Grid>
             ))}
           </Grid>

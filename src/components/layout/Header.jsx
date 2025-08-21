@@ -15,6 +15,7 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import HomeIcon from "@mui/icons-material/Home";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import PermPhoneMsgIcon from "@mui/icons-material/PermPhoneMsg";
 
@@ -142,9 +143,9 @@ function Header() {
               gap={2}
             >
               <Box display={"flex"} gap={1} alignItems={"center"}>
-                <FmdGoodOutlinedIcon />
+                <LocalPhoneIcon />
                 <a
-                  href={CONTACT.ADDRESS}
+                  href={CONTACT.PHONE}
                   target="_blank"
                   style={{ textDecoration: "none" }}
                 >
@@ -155,7 +156,7 @@ function Header() {
                       ":hover": { color: "secondary.main", cursor: "pointer" },
                     }}
                   >
-                    Phường 15, Đống Đa, TP. HCM
+                    0938.271.602
                   </Typography>
                 </a>
               </Box>

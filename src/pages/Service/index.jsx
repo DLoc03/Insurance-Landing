@@ -209,7 +209,7 @@ function Service() {
           results.length > 0 ? (
             results.map((service, index) => (
               <Grid size={{ xs: 4, md: 2 }} key={index}>
-                <ServiceCard service={service} isShowDesc={false} />
+                <ServiceCard service={service} imageSize="40px" />
               </Grid>
             ))
           ) : (
@@ -222,7 +222,7 @@ function Service() {
             .filter((service) => service.key === "normal")
             .map((service, index) => (
               <Grid size={{ xs: 4, md: 2 }} key={index}>
-                <ServiceCard service={service} isShowDesc={false} />
+                <ServiceCard service={service} imageSize="40px" />
               </Grid>
             ))
         )}
@@ -244,7 +244,7 @@ function Service() {
             >
               {topService.map((service, index) => (
                 <Grid key={index} size={{ xs: 4, md: 2 }}>
-                  <ServiceCard service={service} isShowDesc={false} />
+                  <ServiceCard service={service} imageSize="40px" />
                 </Grid>
               ))}
             </Grid>

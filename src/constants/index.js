@@ -15,7 +15,7 @@ const SOCIAL_URL = {
 };
 
 const CONTACT = {
-  ADDRESS: "https://maps.app.goo.gl/Qn6JXBjFAnhEYKBK9",
+  PHONE: "tel:0987654321",
   EMAIL: "mailto:tuyenpham103@gmail.com?subject=Liên hệ&body=Chào bạn,",
 };
 
