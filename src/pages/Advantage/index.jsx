@@ -8,7 +8,9 @@ import GuestReview from "@/components/ui/GuestReview";
 function Advantage() {
   return (
     <Box>
-      <AdvantageSection />
+      <Box px={{ xs: 2, md: 0 }}>
+        <AdvantageSection />
+      </Box>
       <Box mt={4}>
         <GuestReview />
       </Box>
