@@ -14,7 +14,11 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import Typography from "@mui/material/Typography";
 import CommonIconButton from "../common/CommonIconButton";
 import CommonMenuItem from "../common/CommonMenuItem";
-import { PATHS } from "@/constants";
+
+import { FaTiktok } from "react-icons/fa";
+import { SiZalo } from "react-icons/si";
+
+import { CONTACT, PATHS, SOCIAL_URL } from "@/constants";
 import { useHandleNavigate } from "@/utils";
 
 const serviceItems = [
@@ -29,11 +33,9 @@ const serviceItems = [
 ];
 
 const socialItems = [
-  <FacebookOutlinedIcon />,
-  <InstagramIcon />,
-  <YouTubeIcon />,
-  <TwitterIcon />,
-  <LinkedInIcon />,
+  { path: SOCIAL_URL.FACEBOOK, icon: <FacebookOutlinedIcon /> },
+  { path: SOCIAL_URL.TIKTOK, icon: <FaTiktok /> },
+  { path: SOCIAL_URL.ZALO, icon: <SiZalo /> },
 ];
 
 function Footer() {
@@ -65,22 +67,13 @@ function Footer() {
           <Grid
             item
             size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }}
-            display={"flex"}
+            display={{ xs: "none", lg: "flex" }}
             flexDirection={"column"}
-            alignItems={{
-              xs: "center",
-              sm: "center",
-              md: "flex-start",
-              lg: "flex-start",
-              xl: "flex-start",
-            }}
+            alignItems={"flex-start"}
             gap={1}
           >
-            <Typography variant="h3" color="initial">
-              Logo
-            </Typography>
             <Typography
-              variant="body3"
+              variant="body1"
               color="white"
               sx={{
                 display: {
@@ -92,14 +85,10 @@ function Footer() {
                 },
               }}
             >
-              Chúng tôi là đơn vị tư vấn và cung cấp dịch vụ bảo hiểm chuyên
-              nghiệp, đồng hành cùng khách hàng trong việc lựa chọn những giải
-              pháp an toàn và phù hợp nhất. Với sự tận tâm, kinh nghiệm và uy
-              tín, Ms. Phạm Tuyền không chỉ mang đến các gói bảo hiểm đa dạng mà
-              còn chú trọng vào việc lắng nghe, thấu hiểu nhu cầu riêng của từng
-              khách hàng. Chúng tôi tin rằng, một dịch vụ bảo hiểm tốt không chỉ
-              bảo vệ tài sản và sức khỏe, mà còn mang lại sự an tâm và niềm tin
-              cho mỗi gia đình, mỗi doanh nghiệp.
+              Ms. Phạm Tuyền luôn đặt lợi ích của khách hàng lên hàng đầu, lấy
+              sự hiểu biết sâu sắc và tận tâm làm kim chỉ nam trong mọi hoạt
+              động tư vấn. Với mong muốn giúp mỗi cá nhân, gia đình Việt xây
+              dựng một nền tảng tài chính vững chắc, chị không chỉ tư vấn sản
             </Typography>
           </Grid>
           <Grid
@@ -115,20 +104,20 @@ function Footer() {
           ></Grid>
           <Grid
             item
-            size={{ xs: 12, sm: 12, md: 2, lg: 2, xl: 2 }}
+            size={{ xs: 12, sm: 12, md: 4, lg: 2, xl: 2 }}
             display={"flex"}
             flexDirection={"column"}
             alignItems={{
               xs: "center",
               sm: "center",
-              md: "flex-start",
+              md: "center",
               lg: "flex-start",
               xl: "flex-start",
             }}
             gap={1}
           >
             <Typography variant="h5" color="white" mb={2} fontWeight={700}>
-              Về chúng tôi
+              Về dịch vụ
             </Typography>
             <Box
               display={"flex"}
@@ -159,7 +148,7 @@ function Footer() {
           </Grid>
           <Grid
             item
-            size={{ xs: 12, sm: 12, md: 2, lg: 2, xl: 2 }}
+            size={{ xs: 12, sm: 12, md: 4, lg: 2, xl: 2 }}
             display={"flex"}
             flexDirection={"column"}
             alignItems={{
@@ -174,16 +163,40 @@ function Footer() {
             <Typography variant="h5" color="white" mb={2} fontWeight={700}>
               Liên hệ
             </Typography>
-            <Typography variant="body3" color="white">
-              Email
-            </Typography>
-            <Typography variant="body3" color="white">
-              Phone
-            </Typography>
+            <a
+              href={CONTACT.EMAIL}
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
+              <Typography
+                variant="body1"
+                color="white"
+                sx={{
+                  ":hover": { color: "secondary.main", cursor: "pointer" },
+                }}
+              >
+                tuyenpham103@gmail.com
+              </Typography>
+            </a>
+            <a
+              href={CONTACT.PHONE}
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
+              <Typography
+                variant="body1"
+                color="white"
+                sx={{
+                  ":hover": { color: "primary.strong", cursor: "pointer" },
+                }}
+              >
+                0938.271.602
+              </Typography>
+            </a>
           </Grid>
           <Grid
             item
-            size={{ xs: 12, sm: 12, md: 2, lg: 2, xl: 2 }}
+            size={{ xs: 12, sm: 12, md: 4, lg: 2, xl: 2 }}
             display={"flex"}
             flexDirection={"column"}
             alignItems={{
@@ -199,10 +212,17 @@ function Footer() {
               Kết nối
             </Typography>
             <Box display={"flex"} gap={1}>
-              {socialItems.map((icon, index) => (
-                <CommonIconButton key={index} sx={{ color: "white" }}>
-                  {icon}
-                </CommonIconButton>
+              {socialItems.map((item, index) => (
+                <a
+                  href={item.path}
+                  target="_blank"
+                  key={index}
+                  style={{ color: "white" }}
+                >
+                  <CommonIconButton sx={{ color: "white", fontSize: 20 }}>
+                    {item.icon}
+                  </CommonIconButton>
+                </a>
               ))}
             </Box>
           </Grid>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import Wave from "react-wavify";
+
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
@@ -12,11 +14,21 @@ import CommonIconButton from "../common/CommonIconButton";
 import Banner1 from "@assets/banner/banner_1.jpg";
 import Banner2 from "@assets/banner/banner_2.jpg";
 import Banner3 from "@assets/banner/banner_3.jpg";
+import CommonButton from "../common/CommonButton";
+
+import { fadeIn, useHandleNavigate, zoomIn } from "@/utils";
+import { PATHS } from "@/constants";
+
+import { motion } from "framer-motion";
+
+import { bounceIn, scaleUp } from "@/utils";
 
 const banners = [Banner1, Banner2, Banner3];
 
 export default function BannerSlider() {
   const [current, setCurrent] = useState(0);
+
+  const handleNavigate = useHandleNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,7 +46,13 @@ export default function BannerSlider() {
   };
 
   return (
-    <Box position="relative" width="100%" height="100vh" overflow="hidden">
+    <Box
+      position="relative"
+      width="100%"
+      height="100vh"
+      top={{ xs: 0, sm: 0, md: 0, lg: 100, xl: 100 }}
+      overflow="hidden"
+    >
       {/* Slides */}
       {banners.map((banner, index) => (
         <Box
@@ -67,36 +85,60 @@ export default function BannerSlider() {
       />
 
       {/* Prev/Next buttons */}
-      <CommonIconButton
-        onClick={prevSlide}
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: 16,
-          transform: "translateY(-50%)",
-          color: "white",
-          backgroundColor: "rgba(0,0,0,0.4)",
-          "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
-          zIndex: 10,
+      <motion.div
+        variants={zoomIn(0.3)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ amount: 0.2 }}
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
-        <ArrowBackIosNewIcon />
-      </CommonIconButton>
-      <CommonIconButton
-        onClick={nextSlide}
-        sx={{
-          position: "absolute",
-          top: "50%",
-          right: 16,
-          transform: "translateY(-50%)",
-          color: "white",
-          backgroundColor: "rgba(0,0,0,0.4)",
-          "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
-          zIndex: 10,
+        <CommonIconButton
+          onClick={prevSlide}
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: 16,
+            transform: "translateY(-50%)",
+            color: "white",
+            backgroundColor: "rgba(0,0,0,0.4)",
+            "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
+            zIndex: 10,
+          }}
+        >
+          <ArrowBackIosNewIcon />
+        </CommonIconButton>
+      </motion.div>
+      <motion.div
+        variants={zoomIn(0.3)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ amount: 0.2 }}
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
-        <ArrowForwardIosIcon />
-      </CommonIconButton>
+        <CommonIconButton
+          onClick={nextSlide}
+          sx={{
+            position: "absolute",
+            top: "50%",
+            right: 16,
+            transform: "translateY(-50%)",
+            color: "white",
+            backgroundColor: "rgba(0,0,0,0.4)",
+            "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
+            zIndex: 10,
+          }}
+        >
+          <ArrowForwardIosIcon />
+        </CommonIconButton>
+      </motion.div>
 
       <Box
         height={"100%"}
@@ -112,21 +154,121 @@ export default function BannerSlider() {
           display={"flex"}
           flexDirection={"column"}
           alignItems={"center"}
-          gap={1}
+          width={"100%"}
+          mt={"-100px"}
         >
-          <Typography variant="h2" color="white" fontWeight={700}>
-            Ms. Tuyền
-          </Typography>
-          <Typography variant="" color="white">
-            Hehe
-          </Typography>
+          <motion.div
+            variants={bounceIn(0, 1.5)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ amount: 0.2 }}
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="h1"
+              color="white"
+              fontWeight={700}
+              textAlign={"center"}
+              mb={2}
+            >
+              Ms. Phạm Tuyền
+            </Typography>
+          </motion.div>
+          <motion.div
+            variants={bounceIn(0.3, 1.5)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ amount: 0.2 }}
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="h3"
+              color="secondary.main"
+              textAlign={"center"}
+              px={{ xs: 6, sm: 2, md: 0, lg: 0, xl: 0 }}
+            >
+              Mang đến sự chuyên nghiệp và tận tâm
+            </Typography>
+          </motion.div>
+          <motion.div
+            variants={bounceIn(0.6, 1.5)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ amount: 0.2 }}
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="h4"
+              color="white"
+              textAlign={"center"}
+              px={{ xs: 8, md: 0 }}
+              mt={1}
+            >
+              “Dịch vụ bảo hiểm toàn diện, linh hoạt và uy tín – đồng hành cùng
+              bạn mỗi bước đường đời.”
+            </Typography>
+          </motion.div>
+          <Box display={"flex"} gap={4} mt={4}>
+            <motion.div
+              variants={bounceIn(0.9, 1.5)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ amount: 0.2 }}
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <CommonButton
+                label={"Liên hệ"}
+                sx={{ width: 140, height: 48 }}
+                onClick={() => handleNavigate(PATHS.CONTACT)}
+              />
+            </motion.div>
+            <motion.div
+              variants={bounceIn(1.2, 1.5)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ amount: 0.2 }}
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <CommonButton
+                variant="outlined"
+                label={"Dịch vụ"}
+                sx={{
+                  width: 140,
+                  height: 48,
+                  borderColor: "white",
+                  color: "white",
+                }}
+                onClick={() => handleNavigate(PATHS.SERVICE)}
+              />
+            </motion.div>
+          </Box>
         </Box>
       </Box>
 
       {/* Dots */}
       <Box
         position="absolute"
-        bottom={16}
+        bottom={140}
         width="100%"
         display="flex"
         justifyContent="center"
