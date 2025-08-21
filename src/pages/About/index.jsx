@@ -278,7 +278,7 @@ function About() {
               textAlign={"center"}
               mb={2}
             >
-              Một số gói sản phẩm nổi bật
+              Một số gói dịch vụ nổi bật
             </Typography>
           </motion.div>
           <Grid
