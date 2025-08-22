@@ -73,7 +73,6 @@ function About() {
   useEffect(() => {
     if (items) {
       const data = getServiceByCategories(items, ["outstanding", "new"]);
-      console.log(data);
       setServices(data);
     }
   }, [items]);

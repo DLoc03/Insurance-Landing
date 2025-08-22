@@ -20,6 +20,7 @@ function ServiceDetailSection() {
   useEffect(() => {
     if (items) {
       const data = getServiceByCategories(items, ["outstanding", "new"]);
+      console.log(data);
       setServices(data);
     }
   }, [items]);
@@ -46,25 +47,25 @@ function ServiceDetailSection() {
         data={services?.[2]}
         image={life}
         layout="right"
-        advantageHeading={services?.[0]?.advantage?.map(
-          (ad, index) => index + 1
-        )}
+        advantageHeading={"0"}
       />
       <ServiceDetailCard
         data={services?.[3]}
         image={shield}
         layout="default"
-        advantageHeading={services?.[0]?.advantage?.map(
-          (ad, index) => index + 1
-        )}
+        advantageHeading={"Lớp"}
       />
       <ServiceDetailCard
-        data={services?.[3]}
+        data={services?.[4]}
         image={side}
         layout="default"
-        advantageHeading={services?.[0]?.advantage?.map(
-          (ad, index) => index + 1
-        )}
+        advantageHeading={"Giảm"}
+      />
+      <ServiceDetailCard
+        data={services?.[5]}
+        image={guardian}
+        layout="default"
+        advantageHeading={"Bảo vệ"}
       />
     </>
   );

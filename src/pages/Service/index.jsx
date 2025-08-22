@@ -77,7 +77,6 @@ function Service() {
     if (items) {
       const data = getServiceByCategories(items, ["top"]);
       setTopService(data);
-      console.log("data top: ", data);
     }
   }, [items]);
 
