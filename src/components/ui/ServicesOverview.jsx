@@ -1,59 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Box from "@mui/material/Box";
-
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import Background from "@assets/background/background_2.jpg";
 
-import Finance from "@assets/icon/finance.png";
-import Dream from "@assets/icon/dream.png";
-import Health from "@assets/icon/health.png";
-import Shield from "@assets/icon/shield.png";
-import Smile from "@assets/icon/smile.png";
-import Angel from "@assets/icon/angel.png";
-
-import CommonSection from "../common/CommonSection";
+import ServiceSection from "../common/ServiceSection";
 import CommonOverlay from "../common/CommonOverlay";
 
 import { motion } from "framer-motion";
-import { zoomIn } from "@/utils";
+import { getServiceByCategories, zoomIn } from "@/utils";
 
-const topServices = [
-  {
-    name: "Xanh Tương Lai",
-    image: Finance,
-    desc: "Giải pháp tài chính linh hoạt, mục tiêu đa dạng.",
-  },
-  {
-    name: "Xanh Ước Mơ",
-    image: Dream,
-    desc: "Giải pháp bảo vệ và tích lũy cho 2 thế hệ cùng lúc.",
-  },
-  {
-    name: "Sống Khoẻ Mỗi Ngày",
-    image: Health,
-    desc: "Bảo hiểm linh hoạt với quyền lợi tới 2 tỷ đồng mỗi năm; có thể thêm quyền lợi tùy nhu cầu.",
-  },
-  {
-    name: "Lá Chắn Xanh",
-    image: Shield,
-    desc: "Cung cấp 3 lớp bảo vệ cho đến 143 bệnh lý nghiêm trọng. ",
-  },
-  {
-    name: "Dự Phòng Xanh",
-    image: Smile,
-    desc: "Chi trả 100% số tiền bảo hiểm mỗi ngày nằm viện và 300% nếu điều trị tích cực.",
-  },
-  {
-    name: "Hộ Vệ xanh",
-    image: Angel,
-    desc: "Bảo vệ tai nạn cá nhân với mở rộng chi trả gãy xương, bỏng, nội tạng… ",
-  },
-];
+import { items } from "@/datas/service.json";
 
 function ServicesOverview({ label = "Các dịch vụ tư vấn" }) {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    if (items) {
+      const data = getServiceByCategories(items, ["outstanding", "new"]);
+      setServices(data);
+    }
+  }, [items]);
+
   return (
     <Box
       width={"100%"}
@@ -100,7 +75,11 @@ function ServicesOverview({ label = "Các dịch vụ tư vấn" }) {
           whileInView="show"
           viewport={{ amount: 0.2 }}
         >
-          <CommonSection listData={topServices} imageSize={"40px"} />
+          <ServiceSection
+            listData={services}
+            imageSize={"40px"}
+            height={isMobile ? 140 : 280}
+          />
         </motion.div>
       </Box>
     </Box>

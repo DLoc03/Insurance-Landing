@@ -12,6 +12,7 @@ const flipX = keyframes`
 
 function ServiceCard({
   service,
+  image,
   labelColor = "primary.main",
   variant = "h4",
   imageSize = "100%",
@@ -50,7 +51,7 @@ function ServiceCard({
         }}
       >
         <img
-          src={service.image}
+          src={image}
           alt={service.name}
           title={service.name}
           width={imageSize}
@@ -73,8 +74,15 @@ function ServiceCard({
             color="text.primary"
             mt={2}
             textAlign="center"
+            sx={{
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              WebkitLineClamp: { xs: 4, md: 6 },
+            }}
           >
-            {service.desc}
+            {service.description}
           </Typography>
         )}
       </Box>

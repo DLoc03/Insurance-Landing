@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -13,44 +13,28 @@ import LabelIcon from "@mui/icons-material/Label";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import Image_1 from "@assets/albums/image_1.png";
-import Image_3 from "@assets/albums/image_2.png";
-import Image_2 from "@assets/albums/image_3.png";
-
-import Finance from "@assets/icon/finance.png";
-import Dream from "@assets/icon/dream.png";
-import Health from "@assets/icon/health.png";
-import Shield from "@assets/icon/shield.png";
-import Smile from "@assets/icon/smile.png";
-import Angel from "@assets/icon/angel.png";
+import future from "@assets/icon/finance.png";
+import dream from "@assets/icon/dream.png";
+import life from "@assets/icon/health.png";
+import shield from "@assets/icon/shield.png";
+import side from "@assets/icon/smile.png";
+import guardian from "@assets/icon/angel.png";
 
 import ServiceCard from "@/components/common/ServiceCard";
 import CommonButton from "@/components/common/CommonButton";
 
 import { PATHS } from "@/constants";
-import { bounceIn, fadeIn, scaleUp, useHandleNavigate, zoomIn } from "@/utils";
+import {
+  fadeIn,
+  getServiceByCategories,
+  scaleUp,
+  useHandleNavigate,
+  zoomIn,
+} from "@/utils";
 
 import { motion } from "framer-motion";
 
-const badgeItems = ["Lắng nghe ", "Thấu hiểu ", "Chuyên nghiệp"];
-
-const listImage = [
-  {
-    title: "Lắng Nghe",
-    subTitle: "Hiểu rõ nhu cầu bảo vệ của bạn và gia đình",
-    image: Image_1,
-  },
-  {
-    title: "Thấu hiểu",
-    subTitle: "Đưa ra giải pháp bảo hiểm phù hợp",
-    image: Image_2,
-  },
-  {
-    title: "Chuyên nghiệp",
-    subTitle: "Đảm bảo quyền lợi tối ưu với dịch vụ tận tâm",
-    image: Image_3,
-  },
-];
+import { items } from "@/datas/service.json";
 
 const listShortDesc = [
   {
@@ -70,44 +54,29 @@ const listShortDesc = [
   },
 ];
 
-const topServices = [
-  {
-    name: "Xanh Tương Lai",
-    image: Finance,
-    desc: "Giải pháp tài chính linh hoạt, mục tiêu đa dạng.",
-  },
-  {
-    name: "Xanh Ước Mơ",
-    image: Dream,
-    desc: "Giải pháp bảo vệ và tích lũy cho 2 thế hệ cùng lúc.",
-  },
-  {
-    name: "Sống Khoẻ Mỗi Ngày",
-    image: Health,
-    desc: "Bảo hiểm linh hoạt với quyền lợi tới 2 tỷ đồng mỗi năm; có thể thêm quyền lợi tùy nhu cầu.",
-  },
-  {
-    name: "Lá Chắn Xanh",
-    image: Shield,
-    desc: "Cung cấp 3 lớp bảo vệ cho đến 143 bệnh lý nghiêm trọng. ",
-  },
-  {
-    name: "Dự Phòng Xanh",
-    image: Smile,
-    desc: "Chi trả 100% số tiền bảo hiểm mỗi ngày nằm viện và 300% nếu điều trị tích cực.",
-  },
-  {
-    name: "Hộ Vệ xanh",
-    image: Angel,
-    desc: "Bảo vệ tai nạn cá nhân với mở rộng chi trả gãy xương, bỏng, nội tạng… ",
-  },
-];
+const imageMap = {
+  future,
+  dream,
+  life,
+  shield,
+  side,
+  guardian,
+};
 
 function About() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleNavigate = useHandleNavigate();
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    if (items) {
+      const data = getServiceByCategories(items, ["outstanding", "new"]);
+      console.log(data);
+      setServices(data);
+    }
+  }, [items]);
 
   return (
     <Box
@@ -288,15 +257,19 @@ function About() {
             display={"flex"}
             justifyContent={"center"}
           >
-            {topServices.slice(0, 4).map((service, index) => (
-              <Grid size={{ xs: 6, md: 2 }} key={index}>
+            {services.map((service, index) => (
+              <Grid size={{ xs: 6, md: 3, lg: 2 }} key={index}>
                 <motion.div
                   variants={zoomIn(index * 0.2)}
                   initial="hidden"
                   whileInView="show"
                   viewport={{ amount: 0.2 }}
                 >
-                  <ServiceCard service={service} imageSize="40px" />
+                  <ServiceCard
+                    service={service}
+                    imageSize="40px"
+                    image={imageMap[service.key]}
+                  />
                 </motion.div>
               </Grid>
             ))}

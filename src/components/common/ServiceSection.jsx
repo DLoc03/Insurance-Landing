@@ -4,6 +4,13 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Grid from "@mui/material/Grid";
 
+import future from "@assets/icon/finance.png";
+import dream from "@assets/icon/dream.png";
+import life from "@assets/icon/health.png";
+import shield from "@assets/icon/shield.png";
+import side from "@assets/icon/smile.png";
+import guardian from "@assets/icon/angel.png";
+
 // Swiper
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,12 +23,22 @@ import { fadeIn } from "@/utils";
 
 import { motion } from "framer-motion";
 
-export default function CommonSection({
+const imageMap = {
+  future,
+  dream,
+  life,
+  shield,
+  side,
+  guardian,
+};
+
+export default function ServiceSection({
   listData = [],
   labelColor = "primary.main",
   variant = "h4",
   imageSize = "100%",
-  sx = {},
+  height = 280,
+  image,
 }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -71,7 +88,8 @@ export default function CommonSection({
                   labelColor={labelColor}
                   variant={variant}
                   imageSize={imageSize}
-                  height={160}
+                  height={height}
+                  image={imageMap[item.key]}
                 />
               </motion.div>
             </SwiperSlide>
@@ -97,6 +115,8 @@ export default function CommonSection({
                   labelColor={labelColor}
                   variant={variant}
                   imageSize={imageSize}
+                  height={height}
+                  image={imageMap[item.key]}
                 />
               </motion.div>
             </Grid>

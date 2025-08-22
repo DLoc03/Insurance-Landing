@@ -1,10 +1,288 @@
 {
   "items": [
-    { "id": 1, "name": "Xanh Ước Mơ" },
-    { "id": 2, "name": "Xanh Tương lai" },
-    { "id": 3, "name": "Lá chắn xanh" },
-    { "id": 4, "name": "Dự phòng xanh" },
-    { "id": 5, "name": "Hộ vệ xanh" },
-    { "id": 6, "name": "Sống khoẻ mỗi ngày" }
+    {
+      "id": 1,
+      "key": "dream",
+      "name": "Xanh ước mơ",
+      "description": "Xanh Ước Mơ - Giải pháp bảo vệ và tích luỹ toàn diện cho cả 2 thế hệ trong gia đình",
+      "content": [
+        {
+          "headID": 1,
+          "heading": "Xanh Ước Mơ - Giải pháp bảo vệ và tích luỹ toàn diện cho cả 2 thế hệ trong gia đình",
+          "content": [
+            "1...2...3...",
+            "Từng bước nhỏ của con là những khoảnh khắc lớn lao, đong đầy xúc cảm trong lòng cha mẹ. Khi nhìn con chập chững bước đi, khám phá thế giới bằng ánh mắt trong veo, cha mẹ thấy hành trình này thật diệu kỳ và trọn vẹn yêu thương.",
+            "Manulife thấu hiểu rằng mỗi gia đình là một câu chuyện riêng, với mong ước dành cho con những điều tốt đẹp nhất theo cách của mình. Xanh Ước Mơ sẽ trở thành một phần trong câu chuyện ấy, vững chắc và an toàn, đồng hành và vun đắp, để trao cho con một hành trình trưởng thành đầy ý nghĩa.",
+            "1...2...3...",
+            "Từng nhịp bước vững vàng cho hành trình cùng con lớn khôn..."
+          ]
+        }
+      ],
+      "advantage": [
+        {
+          "headID": 1,
+          "heading": "Giải pháp",
+          "description": "Cho con cuộc đời, chở che trọn đời",
+          "content": [
+            "Bảo vệ suốt đời trước các rủi ro trong cuộc sống",
+            "Tích luỹ an toàn, không âu lo với lãi suất cam kết trong suốt thời hạn hợp đồng"
+          ]
+        },
+        {
+          "headID": 2,
+          "heading": "Thế hệ",
+          "description": "Bắt đầu từ cha mẹ, tương lai trọn cho con",
+          "content": [
+            "Tích luỹ hiệu quả với lãi suất gia tăng trong 10 năm đầu tiên",
+            "Thưởng duy trì hợp đồng tại cột mốc kỷ niệm năm thứ 10"
+          ]
+        },
+        {
+          "headID": 3,
+          "heading": "Bảo vệ",
+          "description": "Nhân 3 bảo vệ, theo từng bước chân con",
+          "content": [
+            "Gia tăng 5% số tiền bảo hiểm khi có thành viên mới trong gia đình",
+            "Tự động gia tăng 5% số tiền bảo hiểm mỗi năm từ năm thứ 2 đến năm thứ 11",
+            "Linh hoạt chuyển đổi kế hoạch bảo hiểm theo nhu cầu"
+          ]
+        }
+      ],
+      "category": ["outstanding", "new"]
+    },
+    {
+      "id": 2,
+      "key": "future",
+      "name": "Xanh tương lai",
+      "description": "Xanh Tương Lai – Giải pháp tài chính linh hoạt cho nhiều mục tiêu sống",
+      "content": [
+        {
+          "headID": 1,
+          "heading": "Xanh Tương Lai – Giải pháp tài chính linh hoạt cho nhiều mục tiêu sống",
+          "content": [
+            "Xin chào bạn, người luôn tiến về phía trước, sống nhiều vai trò và không ngừng hướng tới những điều tốt đẹp hơn cho bản thân và gia đình.",
+            "Manulife thấu hiểu rằng bạn cần một giải pháp tài chính đủ vững để bảo vệ, đủ linh hoạt để đồng hành cùng mọi dự định, dù là hôm nay hay mai sau.",
+            "Manulife thấu hiểu rằng mỗi gia đình là một câu chuyện riêng, với mong ước dành cho con những điều tốt đẹp nhất theo cách của mình. Xanh Ước Mơ sẽ trở thành một phần trong câu chuyện ấy, vững chắc và an toàn, đồng hành và vun đắp, để trao cho con một hành trình trưởng thành đầy ý nghĩa.",
+            "Xanh Tương Lai - giải pháp tài chính đa mục tiêu với cấu trúc 3 Cộng+, giúp bạn bảo vệ cuộc sống, xây dựng nền tảng tài chính, và thích ứng linh hoạt theo nhịp sống năng động của chính mình."
+          ]
+        }
+      ],
+      "advantage": [
+        {
+          "headID": 1,
+          "heading": "Bảo vệ",
+          "description": "",
+          "content": [
+            "Bình an trọn vẹn nhờ quỹ bảo hiểm tối ưu trước các rủi ro về sinh mạng và sức khoẻ",
+            "Tự động gia tăng mức bảo vệ lên đến 50% số tiền bảo hiểm",
+            "Gia tăng tối đa 25% số tiền bảo hiểm khi có thành viên mới trong gia đình"
+          ]
+        },
+        {
+          "headID": 2,
+          "heading": "Đầu tư",
+          "description": "",
+          "content": [
+            "Xây dựng tương lai hưng thịnh với danh mục Quỹ liên kết đơn vị ưu việt",
+            "Tối ưu hoá thời gian tích luỹ 3 Quỹ Hưng Thịnh với cơ chế tự động điều chỉnh danh mục đầu tư",
+            "Đa dạng lựa chọn với 6 Quỹ theo khẩu vị rủi ro",
+            "Tăng trưởng tài sản hiệu quả với khoản thưởng dy trì hợp đồng tại các cột mốc năm thứ 10, 15, 20",
+            "Được quản lý bởi Công ty Quản lý Quỹ bề dày kinh nghiệm đầu tư"
+          ]
+        },
+        {
+          "headID": 3,
+          "heading": "Linh hoạt",
+          "description": "",
+          "content": [
+            "Hoàn toàn miễn phí khi chuyển đổi Quỹ và thay đổi tỷ lệ đầu tư vào Quỹ",
+            "Linh hoạt chuyển đổi kế hoạch bảo hiểm theo yêu cầu",
+            "Cơ hội gia tăng giá trị tài khoản với khoản đầu tư thêm tương ứng 5 lần phí bảo hiểm hàng năm"
+          ]
+        }
+      ],
+      "category": ["outstanding", "new"]
+    },
+    {
+      "id": 3,
+      "key": "life",
+      "name": "Sống khoẻ mỗi ngày",
+      "description": "Sống khỏe mỗi ngày không chỉ là một lựa chọn, mà là bước đi đầu tiên để bạn làm chủ cuộc sống, để mỗi ngày trôi qua không nuối tiếc, mà tràn ngập năng lượng cùng niềm vui.",
+      "content": [
+        {
+          "headID": 1,
+          "heading": "Vì sao cần Sống Khỏe Mỗi Ngày?",
+          "content": [
+            "Vì cuộc đời này không có chỗ cho những “giá như”...",
+            "Sống khỏe mỗi ngày không chỉ là một lựa chọn, mà là bước đi đầu tiên để bạn làm chủ cuộc sống, để mỗi ngày trôi qua không nuối tiếc, mà tràn ngập năng lượng cùng niềm vui.",
+            "Đừng chờ đợi đến khi cơ thể lên tiếng.",
+            "Hãy chủ động lên kế hoạch bảo vệ sức khỏe của chính bạn và gia đình từ hôm nay, thay vì bị động trong âu lo với những “giá như” muộn màng.",
+            "Hãy cùng Manulife lựa chọn Sống Khỏe Mỗi Ngày, vì một cuộc sống",
+            "0 ÂU LO - 0 GÒ BÓ - 0 GIÁ NHƯ"
+          ]
+        }
+      ],
+      "advantage": [
+        {
+          "headID": 1,
+          "heading": "Âu lo",
+          "description": "",
+          "content": [
+            "Thoải mái tham gia với chi phí hợp lý danh cho mọi độ tuổi",
+            "An tâm điều trị với quyền lợi bảo vệ lên đến 2 tỷ đồng/năm cho các nhu cầu y tế thiết thực",
+            "Yêu cầu thanh toán bảo hiểm nhanh chóng, dễ dàng với ứng dụng trực tuyến eClaims"
+          ]
+        },
+        {
+          "headID": 2,
+          "heading": "Giá như",
+          "description": "",
+          "content": [
+            "Bảo vệ dài lâu lên đến 75 tuổi, giúp giảm thiểu gánh nặng về chi phí y tế trước những rủi ro sức khoẻ nghiêm trọng như ung thư, đột quỵ, tiểu đường, và nhiều bệnh lý khác"
+          ]
+        }
+      ],
+      "category": ["outstanding"]
+    },
+    {
+      "id": 4,
+      "key": "shield",
+      "name": "Lá chắn xanh",
+      "description": "Sản phẩm bảo hiểm đính kèm bệnh lý nghiêm trọng Lá Chắn Xanh",
+      "content": [
+        {
+          "headID": 1,
+          "heading": "",
+          "content": [
+            "Bạn luôn là người âm thầm gánh hết bão giông, để người thân được sống trong bình yên. Bạn thức sớm về khuya, luôn cố gắng thêm một chút, lo xa một chút… để mọi người được an tâm thêm rất nhiều. Nhưng đôi khi, chính bạn - “người che chắn” cũng có thể gặp lúc chông chênh. Và lúc ấy, ai sẽ là người bảo vệ bạn? Lá Chắn Xanh từ Manulife - bảo hiểm bệnh lý nghiêm trọng được tạo ra cho thời điểm ấy, để khi người che chắn phải tạm lùi lại, vẫn có một lá chắn khác kịp thời xuất hiện. Không chỉ bảo vệ bạn, mà còn bảo vệ những người bạn luôn nghĩ đến trước tiên"
+          ]
+        }
+      ],
+      "advantage": [
+        {
+          "headID": 1,
+          "heading": "An tâm",
+          "description": "",
+          "content": [
+            "An tâm điều trị với nền tảng bảo vệ trước 78 bênh giai đoạn cuối, bao gồm các bệnh đặc thù ở trẻ em và theo giới tính"
+          ]
+        },
+        {
+          "headID": 2,
+          "heading": "Tăng cường",
+          "description": "",
+          "content": ["Tăng cường bảo vệ trước 61 bệnh từ giai đoạn sớm"]
+        },
+        {
+          "headID": 3,
+          "heading": "Nâng cấp",
+          "description": "",
+          "content": [
+            "Nâng cấp bảo vệ trước 4 vấn đề y tế phổ biến ở Việt Nam như ung thư tuyến giáp nghiêm trọng và các biến chứng tiểu đường."
+          ]
+        }
+      ],
+      "category": ["outstanding", "new"]
+    },
+    {
+      "id": 5,
+      "key": "side",
+      "name": "Dự phòng xanh",
+      "description": "Sản phẩm bảo hiểm đính kèm trợ cấp y tế Dự Phòng Xanh",
+      "content": [
+        {
+          "headID": 1,
+          "heading": "",
+          "content": [
+            "Trên hành trình chăm sóc sức khỏe, không phải chi phí nào cũng hiện rõ trên hóa đơn. Đó có thể là khoản thu nhập bị gián đoạn, chi phí thuốc men bổ sung hay sự sắp xếp chăm sóc cho người thân – những gánh nặng tưởng nhỏ nhưng lại khiến bạn không khỏi trăn trở. Dự Phòng Xanh – bảo hiểm trợ cấp y tế từ Manulife giúp bạn an tâm hơn với khoản hỗ trợ tài chính cho mỗi ngày điều trị nội trú và chủ động chăm sóc bản thân và người thương yêu, nhẹ nhàng vượt qua những ngày dưỡng bệnh – để phục hồi không chỉ về thể chất, mà cả tinh thần"
+          ]
+        }
+      ],
+      "advantage": [
+        {
+          "headID": 1,
+          "heading": "gánh nặng viện phí",
+          "description": "",
+          "content": [
+            "Chi trả 100% STBH cho mỗi ngày nằm viện thông thường",
+            "Chi trả 300% STBH cho mỗi ngày nằm viện khi điều trị tích cực"
+          ]
+        },
+        {
+          "headID": 2,
+          "heading": "áp lực thu nhập",
+          "description": "",
+          "content": ["Hỗ trợ thiết thực lên đến 100 ngày nằm viện mỗi năm"]
+        },
+        {
+          "headID": 3,
+          "heading": "thủ tục, thêm thảnh thơi",
+          "description": "",
+          "content": [
+            "Yêu cầu bồi thường tiện lợi thông qua ứng dụng trực tuyển eClaims"
+          ]
+        }
+      ],
+      "category": ["outstanding", "new"]
+    },
+    {
+      "id": 6,
+      "key": "guardian",
+      "name": "Hộ vệ xanh",
+      "description": "Hộ Vệ Xanh – Hộ tống bạn trên hành trình sống khỏe",
+      "content": [
+        {
+          "headID": "",
+          "heading": "",
+          "content": []
+        }
+      ],
+      "advantage": [
+        {
+          "headID": 1,
+          "heading": "Thiết thực",
+          "description": "",
+          "content": [
+            "Bảo vệ cơ thể trước nhiều mức độ thương tật, tổn thương do tai nạn, từ những ảnh hưởng nhẹ đến rủi ro nghiêm trọng"
+          ]
+        },
+        {
+          "headID": 2,
+          "heading": "Toàn diện",
+          "description": "",
+          "content": [
+            "Mở rộng chi trả cho các tai nạn phổ biến như bỏng, gãy xương, tổn thương nội tạng và chấn thương sọ não"
+          ]
+        }
+      ],
+      "category": ["outstanding"]
+    },
+    {
+      "id": 7,
+      "key": "happy",
+      "name": "Hành trình hạnh phúc",
+      "description": "Liên kết chung, linh hoạt thời gian đóng phí, bảo vệ tối ưu, thưởng lên đến 400%, miễn phí quản lý hợp đồng sau 85 tuổi.",
+      "content": [],
+      "advantage": [],
+      "category": ["top"]
+    },
+    {
+      "id": 8,
+      "key": "safe",
+      "name": "An tâm vui sống",
+      "description": "Bảo hiểm tử kỳ, đóng phí 3–10 năm nhưng bảo vệ đến 30 năm.",
+      "content": [],
+      "advantage": [],
+      "category": ["top"]
+    },
+    {
+      "id": 9,
+      "key": "beautiful",
+      "name": "Cuộc sống tươi đẹp",
+      "description": "Bảo vệ bệnh hiểm nghèo toàn diện, chi trả đến 300%, thêm lợi ích cho trẻ hoặc theo giới tính, đóng phí ngắn hạn, bảo vệ đến 99 tuổi.",
+      "content": [],
+      "advantage": [],
+      "category": ["top"]
+    }
   ]
 }

@@ -21,6 +21,15 @@ export const getServiceByKeyword = (keyword) => {
   );
 };
 
+export const getServiceByCategories = (items, categories = []) => {
+  if (!Array.isArray(items)) return [];
+  if (categories.length === 0) return items;
+
+  return items.filter((item) =>
+    item.category.some((c) => categories.includes(c))
+  );
+};
+
 // animations.js
 export const fadeIn = (direction = "up", delay = 0, duration = 0.6) => {
   let x = 0,
