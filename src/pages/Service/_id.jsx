@@ -6,35 +6,13 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-import future from "@assets/icon/finance.png";
-import dream from "@assets/icon/dream.png";
-import life from "@assets/icon/health.png";
-import shield from "@assets/icon/shield.png";
-import side from "@assets/icon/smile.png";
-import guardian from "@assets/icon/angel.png";
-import happy from "@assets/icon/happy.png";
-import safe from "@assets/icon/dance.png";
-import beautiful from "@assets/icon/life.png";
-
-import { PATHS } from "@/constants";
+import { IMAGE_MAP, PATHS } from "@/constants";
 import ServiceCard from "@/components/common/ServiceCard";
 import { useHandleNavigate } from "@/utils";
 import ServicesOverview from "@/components/ui/ServicesOverview";
 import GuestReview from "@/components/ui/GuestReview";
 
 import { items } from "@/datas/service.json";
-
-const imageMap = {
-  future,
-  dream,
-  life,
-  shield,
-  side,
-  guardian,
-  happy,
-  safe,
-  beautiful,
-};
 
 function ServiceDetail() {
   const location = useLocation();
@@ -99,7 +77,7 @@ function ServiceDetail() {
               <ServiceCard
                 service={service}
                 imageSize={"40px"}
-                image={imageMap[service.key]}
+                image={IMAGE_MAP[service.key]}
               />
             </Grid>
           ))

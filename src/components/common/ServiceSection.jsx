@@ -4,13 +4,6 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Grid from "@mui/material/Grid";
 
-import future from "@assets/icon/finance.png";
-import dream from "@assets/icon/dream.png";
-import life from "@assets/icon/health.png";
-import shield from "@assets/icon/shield.png";
-import side from "@assets/icon/smile.png";
-import guardian from "@assets/icon/angel.png";
-
 // Swiper
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -22,15 +15,7 @@ import ServiceCard from "./ServiceCard";
 import { fadeIn } from "@/utils";
 
 import { motion } from "framer-motion";
-
-const imageMap = {
-  future,
-  dream,
-  life,
-  shield,
-  side,
-  guardian,
-};
+import { IMAGE_MAP } from "@/constants";
 
 export default function ServiceSection({
   listData = [],
@@ -88,7 +73,7 @@ export default function ServiceSection({
                   variant={variant}
                   imageSize={imageSize}
                   height={height}
-                  image={imageMap[item.key]}
+                  image={IMAGE_MAP[item.key]}
                 />
               </motion.div>
             </SwiperSlide>
@@ -121,7 +106,7 @@ export default function ServiceSection({
                   variant={variant}
                   imageSize={imageSize}
                   height={height}
-                  image={imageMap[item.key]}
+                  image={IMAGE_MAP[item.key]}
                 />
               </motion.div>
             </Grid>

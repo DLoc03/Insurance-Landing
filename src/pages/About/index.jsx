@@ -13,17 +13,10 @@ import LabelIcon from "@mui/icons-material/Label";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import future from "@assets/icon/finance.png";
-import dream from "@assets/icon/dream.png";
-import life from "@assets/icon/health.png";
-import shield from "@assets/icon/shield.png";
-import side from "@assets/icon/smile.png";
-import guardian from "@assets/icon/angel.png";
-
 import ServiceCard from "@/components/common/ServiceCard";
 import CommonButton from "@/components/common/CommonButton";
 
-import { PATHS } from "@/constants";
+import { IMAGE_MAP, PATHS } from "@/constants";
 import {
   fadeIn,
   getServiceByCategories,
@@ -53,15 +46,6 @@ const listShortDesc = [
       "Giúp khách hàng an tâm trước rủi ro, bảo vệ tài chính và kiến tạo tương lai vững chắc cho gia đình.",
   },
 ];
-
-const imageMap = {
-  future,
-  dream,
-  life,
-  shield,
-  side,
-  guardian,
-};
 
 function About() {
   const theme = useTheme();
@@ -268,7 +252,7 @@ function About() {
                   <ServiceCard
                     service={service}
                     imageSize="40px"
-                    image={imageMap[service.key]}
+                    image={IMAGE_MAP[service.key]}
                     height={isMobile ? 260 : 274}
                   />
                 </motion.div>

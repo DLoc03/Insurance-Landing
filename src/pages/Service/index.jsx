@@ -7,16 +7,6 @@ import TextField from "@mui/material/TextField";
 import LabelIcon from "@mui/icons-material/Label";
 import Divider from "@mui/material/Divider";
 
-import future from "@assets/icon/finance.png";
-import dream from "@assets/icon/dream.png";
-import life from "@assets/icon/health.png";
-import shield from "@assets/icon/shield.png";
-import side from "@assets/icon/smile.png";
-import guardian from "@assets/icon/angel.png";
-import happy from "@assets/icon/happy.png";
-import safe from "@assets/icon/dance.png";
-import beautiful from "@assets/icon/life.png";
-
 import ServiceCard from "@/components/common/ServiceCard";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -30,18 +20,6 @@ import ServiceDetailSection from "@/components/ui/ServiceDetailSection";
 
 import { items } from "@/datas/service.json";
 import { IMAGE_MAP } from "@/constants";
-
-const imageMap = {
-  future,
-  dream,
-  life,
-  shield,
-  side,
-  guardian,
-  happy,
-  safe,
-  beautiful,
-};
 
 function Service() {
   const [keyword, setKeyword] = useState("");
@@ -297,7 +275,7 @@ function Service() {
                         service={service}
                         imageSize="40px"
                         height={280}
-                        image={imageMap[service.key]}
+                        image={IMAGE_MAP[service.key]}
                       />
                     </motion.div>
                   </Grid>
@@ -404,7 +382,7 @@ function Service() {
                     <ServiceCard
                       service={service}
                       imageSize="40px"
-                      image={imageMap[service.key]}
+                      image={IMAGE_MAP[service.key]}
                       height={isMobile ? 260 : 280}
                     />
                   </motion.div>
