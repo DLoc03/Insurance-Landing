@@ -87,7 +87,8 @@ function About() {
       <Grid
         container
         spacing={{ xs: 2, md: 4 }}
-        width={{ xs: "100%", lg: 1360 }}
+        width={"100%"}
+        maxWidth={1360}
         px={{ xs: 2, lg: 0 }}
       >
         <Grid size={12}>

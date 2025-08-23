@@ -96,7 +96,13 @@ export default function ServiceSection({
           ))}
         </Swiper>
       ) : (
-        <Grid container spacing={2} width={1360} px={{ sm: 2, lg: 0 }}>
+        <Grid
+          container
+          spacing={2}
+          width={"100%"}
+          maxWidth={1360}
+          px={{ sm: 2, lg: 0 }}
+        >
           {listData.map((item, index) => (
             <Grid item size={{ xs: 12, sm: 4, lg: 2 }} key={index}>
               <motion.div

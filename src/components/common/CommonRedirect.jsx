@@ -18,12 +18,13 @@ function CommonRedirect({ path = "" }) {
       justifyContent={"center"}
       alignItems={"center"}
       height={80}
-      sx={{ backgroundColor: "third.main" }}
+      sx={{ backgroundColor: "#00283e" }}
     >
       <Box
         display={"flex"}
         justifyContent={"space-between"}
-        width={{ xs: "100%", lg: 1360 }}
+        width={"100%"}
+        maxWidth={1360}
         px={{ xs: 2, lg: 0 }}
         alignItems={"center"}
       >

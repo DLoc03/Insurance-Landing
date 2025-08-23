@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Box from "@mui/material/Box";
-import AppBar from "@mui/material/AppBar";
 import Grid from "@mui/material/Grid";
 
-import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
-import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import Typography from "@mui/material/Typography";
 import CommonIconButton from "../common/CommonIconButton";
-import CommonMenuItem from "../common/CommonMenuItem";
+
+import Background from "@assets/background/footer.jpg";
 
 import { FaTiktok } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
@@ -50,20 +44,24 @@ function Footer() {
     >
       <Box
         sx={{
-          backgroundColor: "primary.main",
+          position: "relative",
+          backgroundImage: `url(${Background})`,
+          backgroundSize: "cover",
           width: "100%",
           display: "flex",
           justifyContent: "center",
           px: { xs: 2, sm: 2, md: 2, lg: 0, xl: 0 },
-          py: 6,
+          py: 8,
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "primary.main",
+            opacity: 0.8,
+          },
         }}
       >
-        <Grid
-          container
-          spacing={4}
-          maxWidth={1360}
-          width={{ xs: "100%", sm: "100%", md: "100%", lg: 1360, xl: 1360 }}
-        >
+        <Grid container spacing={4} maxWidth={1360} width="100%" zIndex={10}>
           <Grid
             item
             size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }}

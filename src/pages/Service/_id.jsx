@@ -77,7 +77,8 @@ function ServiceDetail() {
       <Grid
         container
         spacing={2}
-        width={{ xs: "100%", lg: 1360 }}
+        width={"100%"}
+        maxWidth={1360}
         px={{ xs: 2, lg: 0 }}
       >
         {results.length > 0 && (

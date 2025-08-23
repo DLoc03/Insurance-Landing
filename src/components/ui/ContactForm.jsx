@@ -75,7 +75,8 @@ function ContactForm() {
           container
           spacing={2}
           px={{ xs: 2, lg: 0 }}
-          width={{ xs: "100%", md: 1360 }}
+          maxWidth={1360}
+          width={"100%"}
           zIndex={10}
         >
           <Grid size={{ xs: 12, md: 6 }}>

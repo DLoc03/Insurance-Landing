@@ -128,7 +128,7 @@ function Header() {
               py: 2,
               px: { xs: 2, sm: 2, md: 2, lg: 0, xl: 0 },
               maxWidth: 1360,
-              width: { xs: "100%", sm: "100%", md: "100%", lg: 1360, xl: 1360 },
+              width: "100%",
             }}
           >
             {/* Address and Email */}
@@ -266,7 +266,7 @@ function Header() {
         >
           <Box
             maxWidth={1360}
-            width={1360}
+            width={"100%"}
             py={2}
             display={"flex"}
             justifyContent={"space-between"}

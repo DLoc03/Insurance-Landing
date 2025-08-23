@@ -69,8 +69,8 @@ function Introduction() {
       <Grid
         container
         spacing={{ xs: 2, lg: 8 }}
-        width={{ xs: "100%", sm: "100%", md: "100%", lg: 1360 }}
-        px={{ xs: 2, sm: 2, md: 2 }}
+        width={"100%"}
+        px={2}
         maxWidth={1360}
         mx={"auto"}
       >
