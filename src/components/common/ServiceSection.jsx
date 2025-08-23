@@ -38,7 +38,6 @@ export default function ServiceSection({
   variant = "h4",
   imageSize = "100%",
   height = 280,
-  image,
 }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));

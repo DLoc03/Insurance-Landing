@@ -269,6 +269,7 @@ function About() {
                     service={service}
                     imageSize="40px"
                     image={imageMap[service.key]}
+                    height={isMobile ? 260 : 274}
                   />
                 </motion.div>
               </Grid>

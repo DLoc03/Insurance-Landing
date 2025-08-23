@@ -64,6 +64,7 @@ function CustomerReviewSlider({ reviews }) {
           fontWeight={700}
           mb={2}
           textAlign={"center"}
+          px={{ xs: 2, md: 12, lg: 0 }}
         >
           Cảm nghĩ khách hàng về dịch vụ tư vấn của Ms. Phạm Tuyền
         </Typography>

@@ -29,6 +29,7 @@ import { fadeIn, getServiceByCategories, scaleUp, zoomIn } from "@/utils";
 import ServiceDetailSection from "@/components/ui/ServiceDetailSection";
 
 import { items } from "@/datas/service.json";
+import { IMAGE_MAP } from "@/constants";
 
 const imageMap = {
   future,
@@ -46,9 +47,9 @@ function Service() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState([]);
   const [services, setServices] = useState([]);
-  const [topService, setTopService] = useState([]);
   const [newService, setNewService] = useState([]);
   const [mostService, setMostService] = useState([]);
+  const [topService, setTopService] = useState([]);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -68,15 +69,15 @@ function Service() {
 
   useEffect(() => {
     if (items) {
-      const data = getServiceByCategories(items, ["new"]);
-      setNewService(data);
+      const data = getServiceByCategories(items, ["recommend"]);
+      setTopService(data);
     }
   }, [items]);
 
   useEffect(() => {
     if (items) {
-      const data = getServiceByCategories(items, ["top"]);
-      setTopService(data);
+      const data = getServiceByCategories(items, ["new"]);
+      setNewService(data);
     }
   }, [items]);
 
@@ -275,49 +276,99 @@ function Service() {
             </Typography>{" "}
           </Grid>
         )}
-        {keyword ? (
-          results.length > 0 ? (
-            results.map((service, index) => (
-              <Grid size={{ xs: 6, md: 3, lg: 2 }} key={index}>
-                <motion.div
-                  variants={fadeIn("up", index * 0.2)}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ amount: 0.2 }}
-                >
-                  <ServiceCard
-                    service={service}
-                    imageSize="40px"
-                    height={280}
-                    image={imageMap[service.key]}
-                  />
-                </motion.div>
-              </Grid>
-            ))
-          ) : (
-            <Typography variant="body1" color="secondary.main">
-              Không có kết quả cho <span>"{keyword}"</span>
-            </Typography>
-          )
-        ) : (
-          mostService.map((service, index) => (
-            <Grid size={{ xs: 6, md: 3, lg: 2 }} key={index}>
-              <motion.div
-                variants={fadeIn("up", index * 0.2)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ amount: 0.2 }}
-              >
-                <ServiceCard
-                  service={service}
-                  imageSize="40px"
-                  image={imageMap[service.key]}
-                  height={isMobile ? 260 : 280}
-                />
-              </motion.div>
-            </Grid>
-          ))
-        )}
+        <Grid size={12}>
+          <Grid
+            container
+            spacing={2}
+            display={"flex"}
+            justifyContent={"center"}
+          >
+            {keyword ? (
+              results.length > 0 ? (
+                results.map((service, index) => (
+                  <Grid size={{ xs: 6, md: 3, lg: 2 }} key={index}>
+                    <motion.div
+                      variants={fadeIn("up", index * 0.2)}
+                      initial="hidden"
+                      whileInView="show"
+                      viewport={{ amount: 0.2 }}
+                    >
+                      <ServiceCard
+                        service={service}
+                        imageSize="40px"
+                        height={280}
+                        image={imageMap[service.key]}
+                      />
+                    </motion.div>
+                  </Grid>
+                ))
+              ) : (
+                <Grid size={12}>
+                  <Typography
+                    variant="body1"
+                    color="secondary.main"
+                    textAlign={"center"}
+                    mt={4}
+                  >
+                    Không có kết quả cho <span>"{keyword}"</span>
+                  </Typography>
+                  <Typography
+                    variant="h3"
+                    color="initial"
+                    textAlign={"center"}
+                    mt={4}
+                    mb={2}
+                  >
+                    Một số gói dịch vụ nổi bật khác
+                  </Typography>
+                  <Grid
+                    container
+                    spacing={2}
+                    display={"flex"}
+                    justifyContent={"center"}
+                  >
+                    {topService.map((service, index) => (
+                      <Grid size={{ xs: 6, md: 3, lg: 2 }} key={index}>
+                        <motion.div
+                          variants={fadeIn("up", index * 0.2)}
+                          initial="hidden"
+                          whileInView="show"
+                          viewport={{ amount: 0.2 }}
+                        >
+                          <ServiceCard
+                            service={service}
+                            imageSize="40px"
+                            image={IMAGE_MAP[service.key]}
+                            height={isMobile ? 260 : 274}
+                          />
+                        </motion.div>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Grid>
+              )
+            ) : (
+              topService.map((service, index) => (
+                <Grid size={{ xs: 6, md: 3, lg: 2 }} key={index}>
+                  <motion.div
+                    variants={fadeIn("up", index * 0.2)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ amount: 0.2 }}
+                  >
+                    <ServiceCard
+                      service={service}
+                      imageSize="40px"
+                      image={IMAGE_MAP[service.key]}
+                      height={isMobile ? 260 : 274}
+                    />
+                  </motion.div>
+                </Grid>
+              ))
+            )}
+          </Grid>
+        </Grid>
+
         {!keyword && (
           <Grid size={12} mt={4}>
             <motion.div
@@ -362,53 +413,9 @@ function Service() {
             </Grid>
           </Grid>
         )}
-
-        {!keyword && (
-          <Grid size={12} mt={4}>
-            <motion.div
-              variants={zoomIn(0.2)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ amount: 0.2 }}
-            >
-              <Typography
-                variant="h3"
-                color="initial"
-                textAlign={"center"}
-                mb={2}
-              >
-                Một số gói được nhắc đến trong các bài viết trực tuyến
-              </Typography>
-            </motion.div>
-            <Grid
-              container
-              spacing={2}
-              display={"flex"}
-              justifyContent={"center"}
-            >
-              {topService?.map((service, index) => (
-                <Grid size={{ xs: 6, md: 3, lg: 2 }} key={index}>
-                  <motion.div
-                    variants={fadeIn("up", index * 0.2)}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ amount: 0.2 }}
-                  >
-                    <ServiceCard
-                      service={service}
-                      imageSize="40px"
-                      image={imageMap[service.key]}
-                      height={isMobile ? 260 : 280}
-                    />
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-            <Grid size={12} mt={4}>
-              <ServiceDetailSection />
-            </Grid>
-          </Grid>
-        )}
+        <Grid size={12} mt={4}>
+          <ServiceDetailSection />
+        </Grid>
       </Grid>
       <Box mt={4} width={"100%"}>
         <GuestReview />

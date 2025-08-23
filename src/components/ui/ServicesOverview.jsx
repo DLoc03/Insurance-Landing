@@ -78,7 +78,7 @@ function ServicesOverview({ label = "Các dịch vụ tư vấn" }) {
           <ServiceSection
             listData={services}
             imageSize={"40px"}
-            height={isMobile ? 140 : 280}
+            height={isMobile ? 140 : 274}
           />
         </motion.div>
       </Box>

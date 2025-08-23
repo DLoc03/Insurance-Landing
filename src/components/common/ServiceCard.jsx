@@ -63,7 +63,7 @@ function ServiceCard({
           color={labelColor}
           fontWeight={700}
           textAlign="center"
-          minHeight={{ xs: 20, lg: 50 }}
+          minHeight={{ xs: 46, lg: 50 }}
         >
           {service.name}
         </Typography>

@@ -1,3 +1,35 @@
+import future from "@assets/icon/finance.png";
+import dream from "@assets/icon/dream.png";
+import life from "@assets/icon/health.png";
+import shield from "@assets/icon/shield.png";
+import side from "@assets/icon/smile.png";
+import guardian from "@assets/icon/angel.png";
+import happy from "@assets/icon/happy.png";
+import safe from "@assets/icon/dance.png";
+import beautiful from "@assets/icon/life.png";
+import study from "@assets/icon/study.png";
+import old from "@assets/icon/old.png";
+import money from "@assets/icon/money.png";
+import paid from "@assets/icon/paid.png";
+import medical from "@assets/icon/medical.png";
+
+const IMAGE_MAP = {
+  future,
+  dream,
+  life,
+  shield,
+  side,
+  guardian,
+  happy,
+  safe,
+  beautiful,
+  study,
+  old,
+  money,
+  paid,
+  medical,
+};
+
 const PATHS = {
   HOME: "/",
   ABOUT: "/about",
@@ -19,4 +51,4 @@ const CONTACT = {
   EMAIL: "mailto:tuyenpham103@gmail.com?subject=Liên hệ&body=Chào bạn,",
 };
 
-export { PATHS, SOCIAL_URL, CONTACT };
+export { PATHS, SOCIAL_URL, CONTACT, IMAGE_MAP };
