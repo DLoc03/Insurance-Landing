@@ -7,7 +7,7 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import Typography from "@mui/material/Typography";
 import CommonIconButton from "../common/CommonIconButton";
 
-import Background from "@assets/background/footer.jpg";
+import Background from "@assets/background/footer.jpeg";
 
 import { FaTiktok } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
@@ -47,6 +47,7 @@ function Footer() {
           position: "relative",
           backgroundImage: `url(${Background})`,
           backgroundSize: "cover",
+          backgroundPositionY: "bottom",
           width: "100%",
           display: "flex",
           justifyContent: "center",
