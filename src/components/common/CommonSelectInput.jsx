@@ -3,28 +3,30 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
+import ListSubheader from "@mui/material/ListSubheader";
 
 function CommonSelectInput({
   label,
   value: propValue,
   onChange,
-  data = [], // [{id, name}]
-  placeholder = "",
+  data = [], // [{id, name, group}]
+  placeholder = "Chọn một mục",
   fullWidth = true,
   inputSx = {},
   labelSx = {},
   ...rest
 }) {
-  const [value, setValue] = useState(propValue || data[0]?.id || 1);
+  const [value, setValue] = useState(propValue || "");
+
   useEffect(() => {
     if (propValue !== undefined) {
       setValue(propValue);
     }
   }, [propValue]);
 
-  const handleChange = (newValue) => {
-    setValue(newValue);
-    if (onChange) onChange(newValue);
+  const handleChange = (e) => {
+    setValue(e.target.value);
+    if (onChange) onChange(e.target.value);
   };
 
   return (
@@ -42,34 +44,32 @@ function CommonSelectInput({
       <TextField
         select
         value={value}
-        onChange={(e) => handleChange(e.target.value)}
-        fullWidth={fullWidth}
-        variant="outlined"
+        onChange={handleChange}
+        fullWidth
         size="small"
-        placeholder={placeholder}
-        InputProps={{
-          sx: {
-            fontSize: { xs: 12, md: 14 },
-            py: 1,
-            ...inputSx,
-          },
-        }}
-        SelectProps={{
-          MenuProps: {
-            autoFocus: false,
-          },
-        }}
+        sx={inputSx}
         {...rest}
       >
-        {data.map((item) => (
-          <MenuItem
-            key={item.id}
-            value={item.id}
-            sx={{ fontSize: { xs: 12, md: 14 } }}
-          >
-            {item.name}
-          </MenuItem>
-        ))}
+        <MenuItem value="" disabled>
+          {placeholder}
+        </MenuItem>
+
+        {data
+          .filter((item) => item.group !== "other")
+          .map((item) => (
+            <MenuItem key={item.id} value={item.name}>
+              {item.name}
+            </MenuItem>
+          ))}
+
+        <ListSubheader>Khác</ListSubheader>
+        {data
+          .filter((item) => item.group === "other")
+          .map((item) => (
+            <MenuItem key={item.id} value={item.name}>
+              {item.name}
+            </MenuItem>
+          ))}
       </TextField>
     </Box>
   );

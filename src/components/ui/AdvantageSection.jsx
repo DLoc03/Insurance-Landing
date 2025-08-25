@@ -20,8 +20,8 @@ import { fadeIn } from "@/utils";
 const advantageList = [
   {
     icon: Exp,
-    name: "Kinh nghiệm vững vàng",
-    desc: "Với nhiều năm gắn bó trong ngành tài chính – bảo hiểm, Ms. Phạm Tuyền thấu hiểu đa dạng nhu cầu từ cá nhân, gia đình đến doanh nghiệp.",
+    name: "Kiến thức vững chắc",
+    desc: "Với nền tảng chuyên môn và sự nhiệt huyết, Ms. Phạm Tuyền nhanh chóng nắm bắt nhu cầu đa dạng của khách hàng và mang đến giải pháp bảo hiểm tối ưu.",
   },
   {
     icon: Smile,

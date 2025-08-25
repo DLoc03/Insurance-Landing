@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -39,7 +39,7 @@ function ContactForm() {
     email: "",
     phone: "",
     fullName: "",
-    service: "",
+    service: items[0].name || "",
     text: "",
   });
 
@@ -49,6 +49,10 @@ function ContactForm() {
       [field]: value,
     }));
   };
+
+  useEffect(() => {
+    console.log("Form: ", formData);
+  }, [formData]);
 
   return (
     <motion.div
@@ -227,8 +231,10 @@ function ContactForm() {
                   viewport={{ amount: 0.2 }}
                 >
                   <CommonSelectInput
-                    label={"Chọn dịch vụ đăng ký"}
+                    label="Chọn dịch vụ đăng ký"
                     data={items}
+                    value={formData.service}
+                    onChange={(val) => handleChange("service", val)}
                   />
                 </motion.div>
                 <motion.div
@@ -238,8 +244,8 @@ function ContactForm() {
                   viewport={{ amount: 0.2 }}
                 >
                   <CommonInputAutosize
-                    label={"Tin nhắn kèm theo (Không bắt buộc)"}
-                    placeholder="Nhập tin nhắn kèm theo (Không bắt buộc)"
+                    label={"Lời nhắn kèm theo (Không bắt buộc)"}
+                    placeholder="Lời nhắn kèm nhắn kèm theo (Không bắt buộc)"
                     value={formData.text}
                     onChange={(val) => handleChange("text", val)}
                   />

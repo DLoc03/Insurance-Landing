@@ -48,7 +48,8 @@
           ]
         }
       ],
-      "category": ["outstanding", "new"]
+      "category": ["outstanding", "new"],
+      "group": "main"
     },
     {
       "id": 2,
@@ -101,7 +102,8 @@
           ]
         }
       ],
-      "category": ["outstanding", "new"]
+      "category": ["outstanding", "new"],
+      "group": "main"
     },
     {
       "id": 3,
@@ -142,7 +144,8 @@
           ]
         }
       ],
-      "category": ["outstanding"]
+      "category": ["outstanding"],
+      "group": "main"
     },
     {
       "id": 4,
@@ -182,7 +185,8 @@
           ]
         }
       ],
-      "category": ["outstanding", "new"]
+      "category": ["outstanding", "new"],
+      "group": "main"
     },
     {
       "id": 5,
@@ -223,7 +227,8 @@
           ]
         }
       ],
-      "category": ["outstanding", "new"]
+      "category": ["outstanding", "new"],
+      "group": "main"
     },
     {
       "id": 6,
@@ -255,7 +260,8 @@
           ]
         }
       ],
-      "category": ["outstanding"]
+      "category": ["outstanding"],
+      "group": "main"
     },
     {
       "id": 7,
@@ -264,7 +270,8 @@
       "description": "Liên kết chung, linh hoạt thời gian đóng phí, bảo vệ tối ưu, thưởng lên đến 400%, miễn phí quản lý hợp đồng sau 85 tuổi.",
       "content": [],
       "advantage": [],
-      "category": ["top"]
+      "category": ["top"],
+      "group": "main"
     },
     {
       "id": 8,
@@ -282,7 +289,8 @@
       "description": "Bảo vệ bệnh hiểm nghèo toàn diện, chi trả đến 300%, thêm lợi ích cho trẻ hoặc theo giới tính, đóng phí ngắn hạn, bảo vệ đến 99 tuổi.",
       "content": [],
       "advantage": [],
-      "category": ["top"]
+      "category": ["top"],
+      "group": "main"
     },
     {
       "id": 10,
@@ -291,7 +299,8 @@
       "description": "Giải pháp tài chính giúp cha mẹ chủ động tích lũy, đảm bảo nguồn quỹ ổn định cho con cái học tập trong tương lai.",
       "content": [],
       "advantage": [],
-      "category": ["recommend"]
+      "category": ["recommend"],
+      "group": "main"
     },
     {
       "id": 11,
@@ -300,7 +309,8 @@
       "description": "Kế hoạch tích lũy dài hạn, mang lại nguồn thu nhập ổn định để an nhàn tận hưởng tuổi già.",
       "content": [],
       "advantage": [],
-      "category": ["recommend"]
+      "category": ["recommend"],
+      "group": "main"
     },
     {
       "id": 12,
@@ -309,7 +319,8 @@
       "description": "Bảo vệ giá trị tài sản trước rủi ro bất ngờ, giúp an tâm gìn giữ và phát triển khối tài sản đã gây dựng.",
       "content": [],
       "advantage": [],
-      "category": ["recommend"]
+      "category": ["recommend"],
+      "group": "main"
     },
     {
       "id": 13,
@@ -318,16 +329,48 @@
       "description": "Hỗ trợ chi trả các khoản chi phí phát sinh do rủi ro, giảm gánh nặng tài chính cho gia đình.",
       "content": [],
       "advantage": [],
-      "category": ["recommend"]
+      "category": ["recommend"],
+      "group": "main"
     },
     {
       "id": 14,
       "key": "medical",
       "name": "Quỹ chăm lo y tế",
-      "description": "Hỗ trợ chi trả các khoản chi phí phát sinh do rủi ro, giảm gánh nặng tài chính cho gia đình.",
+      "description": "Bảo đảm tài chính khi gặp rủi ro sức khỏe, hỗ trợ chi phí khám chữa bệnh để an tâm điều trị.",
       "content": [],
       "advantage": [],
-      "category": ["recommend"]
+      "category": ["recommend"],
+      "group": "main"
+    },
+    {
+      "id": 15,
+      "key": "recruitment",
+      "name": "Tuyển dụng",
+      "description": "",
+      "content": [],
+      "advantage": [],
+      "category": ["other"],
+      "group": "other"
+    },
+    {
+      "id": 16,
+      "key": "cooperate",
+      "name": "Hợp tác",
+      "description": "",
+      "content": [],
+      "advantage": [],
+      "category": ["other"],
+      "group": "other"
+    },
+    {
+      "id": 17,
+      "key": "comment",
+      "name": "Góp ý",
+      "description": "",
+      "content": [],
+      "advantage": [],
+      "category": ["other"],
+      "group": "other"
     }
   ]
 }
