@@ -6,7 +6,6 @@ import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 
-import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 
@@ -16,7 +15,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import PermPhoneMsgIcon from "@mui/icons-material/PermPhoneMsg";
 
 import { FaTiktok } from "react-icons/fa";
@@ -27,7 +25,6 @@ import CommonMenuItem from "../common/CommonMenuItem";
 
 import HideOnScroll from "@/contexts/HideOnScroll";
 import { CONTACT, PATHS, SOCIAL_URL } from "@/constants";
-import { useHandleNavigate } from "@/utils";
 import { useLocation } from "react-router-dom";
 import CommonSearchBar from "../common/CommonSearchBar";
 
@@ -52,11 +49,6 @@ const navItems = [
     name: "Tại sao chọn Ms. Phạm Tuyền?",
     icon: <ThumbUpAltIcon />,
   },
-  // {
-  //   path: PATHS.GUEST_RATING,
-  //   name: "Cảm nghĩ khách hàng",
-  //   icon: <ChatBubbleOutlineIcon />,
-  // },
   {
     path: PATHS.CONTACT,
     name: "Liên Hệ",
@@ -71,7 +63,6 @@ const socialItems = [
 ];
 
 function Header() {
-  const handleNavigate = useHandleNavigate();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);

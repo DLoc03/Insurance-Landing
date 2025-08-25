@@ -1,0 +1,57 @@
+{
+  "item": {
+    "title": "Cơ Hội Nghề Nghiệp – Tuyển Dụng Tư Vấn Viên Bảo Hiểm",
+    "description": [
+      "Bạn đang tìm kiếm một công việc vừa mang lại thu nhập xứng đáng, vừa tạo ra giá trị ý nghĩa cho cộng đồng?",
+      "Hãy gia nhập đội ngũ Tư vấn viên bảo hiểm tại Manulife – nơi bạn có thể phát triển bản thân, xây dựng sự nghiệp bền vững và giúp hàng nghìn gia đình an tâm trước mọi rủi ro."
+    ],
+    "content": [
+      {
+        "id": 1,
+        "heading": "Vì sao bạn nên chọn nghề Tư vấn viên bảo hiểm?",
+        "key": "content_1",
+        "text": [
+          "Thu nhập không giới hạn: Bạn được chủ động xây dựng nguồn thu nhập của riêng mình, càng nỗ lực – càng bứt phá.",
+          "Linh hoạt thời gian: Không bị gò bó 8 tiếng văn phòng, bạn toàn quyền sắp xếp lịch làm việc để cân bằng công việc – cuộc sống.",
+          "Phát triển bản thân toàn diện: Rèn luyện kỹ năng giao tiếp, quản trị tài chính, quản lý thời gian và đặc biệt là thấu hiểu con người.",
+          "Ý nghĩa nhân văn: Mỗi hợp đồng bảo hiểm bạn ký kết là thêm một gia đình được bảo vệ, thêm một tương lai được bảo đảm."
+        ]
+      },
+      {
+        "id": 2,
+        "heading": "Chúng tôi tìm kiếm ai?",
+        "key": "content_2",
+
+        "text": [
+          "Nam/nữ từ 22 – 45 tuổi, có tinh thần học hỏi và mong muốn phát triển bản thân.",
+          "Yêu thích tư vấn, chia sẻ giá trị, kết nối con người.",
+          "Ưu tiên ứng viên có kinh nghiệm bán hàng, dịch vụ khách hàng, kinh doanh, nhưng không bắt buộc.",
+          "Tinh thần làm việc chủ động, trách nhiệm và khát vọng thành công."
+        ]
+      },
+      {
+        "id": 3,
+        "heading": "Quyền lợi bạn nhận được",
+        "key": "content_3",
+        "text": [
+          "Được đào tạo miễn phí từ cơ bản đến nâng cao bởi các chuyên gia tài chính – bảo hiểm hàng đầu.",
+          "Chính sách hoa hồng, thưởng nóng, thưởng theo tháng/quý/năm hấp dẫn.",
+          "Cơ hội thăng tiến rõ ràng: từ tư vấn viên → quản lý nhóm → giám đốc kinh doanh.",
+          "Tham gia các chương trình thi đua, vinh danh quốc tế MDRT – chuẩn mực danh giá toàn cầu trong ngành bảo hiểm.",
+          "Môi trường làm việc chuyên nghiệp, năng động, đồng đội gắn kết."
+        ]
+      },
+      {
+        "id": 4,
+        "heading": " Bạn sẽ làm gì?",
+        "key": "content_4",
+        "text": [
+          "Tư vấn, phân tích nhu cầu tài chính của khách hàng.",
+          "Đề xuất giải pháp bảo hiểm phù hợp cho từng cá nhân và gia đình.",
+          "Chăm sóc, đồng hành cùng khách hàng trong suốt quá trình tham gia bảo hiểm.",
+          "Xây dựng và phát triển mạng lưới khách hàng bền vững."
+        ]
+      }
+    ]
+  }
+}

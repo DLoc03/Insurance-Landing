@@ -13,6 +13,13 @@ import money from "@assets/icon/money.png";
 import paid from "@assets/icon/paid.png";
 import medical from "@assets/icon/medical.png";
 
+import banner from "@assets/banner/banner_1.jpg";
+
+import content_1 from "@assets/albums/content_1.png";
+import content_2 from "@assets/albums/content_2.png";
+import content_3 from "@assets/albums/content_3.png";
+import content_4 from "@assets/albums/content_4.png";
+
 const IMAGE_MAP = {
   future,
   dream,
@@ -28,6 +35,17 @@ const IMAGE_MAP = {
   money,
   paid,
   medical,
+};
+
+const BANNER_MAP = {
+  banner,
+};
+
+const ALBUM_MAP = {
+  content_1,
+  content_2,
+  content_3,
+  content_4,
 };
 
 const PATHS = {
@@ -51,4 +69,4 @@ const CONTACT = {
   EMAIL: "mailto:tuyenpham103@gmail.com?subject=Liên hệ&body=Chào bạn,",
 };
 
-export { PATHS, SOCIAL_URL, CONTACT, IMAGE_MAP };
+export { PATHS, SOCIAL_URL, CONTACT, IMAGE_MAP, BANNER_MAP, ALBUM_MAP };

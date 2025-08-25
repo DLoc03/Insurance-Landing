@@ -62,11 +62,21 @@ function ContactForm() {
     // Full name
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Vui lòng nhập họ và tên";
+      setAlert({
+        open: true,
+        severity: "error",
+        message: "Vui lòng nhập họ và tên",
+      });
     }
 
     // Email
     if (!formData.email.trim()) {
       newErrors.email = "Vui lòng nhập email";
+      setAlert({
+        open: true,
+        severity: "error",
+        message: "Vui lòng nhập email",
+      });
     } else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
     ) {
@@ -76,6 +86,11 @@ function ContactForm() {
     // Phone
     if (!normalPhone.trim()) {
       phone = "Vui lòng nhập số điện thoại";
+      setAlert({
+        open: true,
+        severity: "error",
+        message: "Vui lòng nhập số điện thoại liên hệ",
+      });
     } else if (!/^(0|\+84)(\d{9})$/.test(normalPhone)) {
       newErrors.normalPhone = "Số điện thoại không hợp lệ";
     }
@@ -83,6 +98,11 @@ function ContactForm() {
     // Service
     if (!formData.service) {
       newErrors.service = "Vui lòng chọn dịch vụ";
+      setAlert({
+        open: true,
+        severity: "error",
+        message: "Vui lòng chọn dịch vụ",
+      });
     }
 
     setErrors(newErrors);
@@ -110,7 +130,7 @@ function ContactForm() {
 
     setLoading(true);
 
-    fetch("/api.php", {
+    fetch("http://localhost/mstuyen/api.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -313,7 +333,7 @@ function ContactForm() {
                   viewport={{ amount: 0.2 }}
                 >
                   <CommonSelectInput
-                    label="Chọn dịch vụ đăng ký"
+                    label="Chọn một mục"
                     data={items}
                     value={formData.service}
                     onChange={(val) => handleChange("service", val)}

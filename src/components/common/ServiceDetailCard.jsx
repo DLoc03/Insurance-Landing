@@ -97,7 +97,7 @@ export default function ServiceDetailCard({
   );
 
   return (
-    <Box sx={{ py: 2, px: { xs: 2, md: 6 } }}>
+    <Box sx={{ py: 2, px: { xs: 2, md: 0 } }}>
       {/* Name & Description */}
 
       <Divider>

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import Wave from "react-wavify";
-
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
@@ -16,12 +14,10 @@ import Banner2 from "@assets/banner/banner_2.jpg";
 import Banner3 from "@assets/banner/banner_3.jpg";
 import CommonButton from "../common/CommonButton";
 
-import { fadeIn, useHandleNavigate, zoomIn } from "@/utils";
+import { bounceIn, useHandleNavigate, zoomIn } from "@/utils";
 import { PATHS } from "@/constants";
 
 import { motion } from "framer-motion";
-
-import { bounceIn, scaleUp } from "@/utils";
 
 const banners = [Banner1, Banner2, Banner3];
 

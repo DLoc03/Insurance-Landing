@@ -20,6 +20,7 @@ import ServiceDetailSection from "@/components/ui/ServiceDetailSection";
 
 import { items } from "@/datas/service.json";
 import { IMAGE_MAP } from "@/constants";
+import RecruitmentSection from "@/components/ui/RecruitmentSection";
 
 function Service() {
   const [keyword, setKeyword] = useState("");
@@ -393,6 +394,9 @@ function Service() {
         )}
         <Grid size={12} mt={4}>
           <ServiceDetailSection />
+        </Grid>
+        <Grid size={12}>
+          <RecruitmentSection />
         </Grid>
       </Grid>
       <Box mt={4} width={"100%"}>
