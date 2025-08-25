@@ -43,11 +43,73 @@ function ContactForm() {
     text: "",
   });
 
+  const [errors, setErrors] = useState({});
+
+  const normalizePhone = (phone) => {
+    return phone.replace(/[\s.\-()]/g, "");
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    // Full name
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = "Vui lòng nhập họ và tên";
+    }
+
+    // Email
+    if (!formData.email.trim()) {
+      newErrors.email = "Vui lòng nhập email";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
+    ) {
+      newErrors.email = "Email không hợp lệ";
+    }
+    const normalPhone = normalizePhone(formData.phone);
+    // Phone
+    if (!normalPhone.trim()) {
+      phone = "Vui lòng nhập số điện thoại";
+    } else if (!/^(0|\+84)(\d{9})$/.test(normalPhone)) {
+      newErrors.normalPhone = "Số điện thoại không hợp lệ";
+    }
+
+    // Service
+    if (!formData.service) {
+      newErrors.service = "Vui lòng chọn dịch vụ";
+    }
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleChange = (field, value) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,
     }));
+  };
+
+  const handleSubmit = () => {
+    if (!validateForm()) {
+      console.log("Form không hợp lệ:", errors);
+      return;
+    }
+
+    const normalPhone = normalizePhone(formData.phone);
+    formData.phone = normalPhone;
+
+    fetch("/api.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Kết quả gửi mail:", data);
+      })
+      .catch((err) => {
+        console.error("Lỗi gửi mail:", err);
+      });
   };
 
   useEffect(() => {
@@ -259,6 +321,7 @@ function ContactForm() {
                   <CommonButton
                     label={"Gửi"}
                     sx={{ width: "100%" }}
+                    onClick={handleSubmit}
                   ></CommonButton>
                 </motion.div>
               </Box>
