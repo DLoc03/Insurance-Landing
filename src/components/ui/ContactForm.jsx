@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
 import CommonOverlay from "../common/CommonOverlay";
 
@@ -44,6 +46,12 @@ function ContactForm() {
   });
 
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [alert, setAlert] = useState({
+    open: false,
+    severity: "success",
+    message: "",
+  });
 
   const normalizePhone = (phone) => {
     return phone.replace(/[\s.\-()]/g, "");
@@ -89,6 +97,8 @@ function ContactForm() {
     }));
   };
 
+  const handleCloseAlert = () => setAlert((prev) => ({ ...prev, open: false }));
+
   const handleSubmit = () => {
     if (!validateForm()) {
       console.log("Form không hợp lệ:", errors);
@@ -98,6 +108,8 @@ function ContactForm() {
     const normalPhone = normalizePhone(formData.phone);
     formData.phone = normalPhone;
 
+    setLoading(true);
+
     fetch("/api.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -105,16 +117,24 @@ function ContactForm() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Kết quả gửi mail:", data);
+        setAlert({
+          open: true,
+          severity: "success",
+          message: "Gửi email thành công!",
+        });
       })
       .catch((err) => {
         console.error("Lỗi gửi mail:", err);
+        setAlert({
+          open: true,
+          severity: "error",
+          message: "Gửi email thất bại!",
+        });
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
-
-  useEffect(() => {
-    console.log("Form: ", formData);
-  }, [formData]);
 
   return (
     <motion.div
@@ -322,13 +342,28 @@ function ContactForm() {
                     label={"Gửi"}
                     sx={{ width: "100%" }}
                     onClick={handleSubmit}
-                  ></CommonButton>
+                    disabled={loading}
+                  />
                 </motion.div>
               </Box>
             </motion.div>
           </Grid>
         </Grid>
       </Box>
+      <Snackbar
+        open={alert.open}
+        autoHideDuration={1000}
+        onClose={handleCloseAlert}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert
+          onClose={handleCloseAlert}
+          severity={alert.severity}
+          sx={{ width: "100%" }}
+        >
+          {alert.message}
+        </Alert>
+      </Snackbar>
     </motion.div>
   );
 }

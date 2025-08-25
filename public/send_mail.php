@@ -1,8 +1,8 @@
 <?php
 function sendContactMailWithPHPMail(array $data):bool|string {
 
-    $to="vynhatduy111@gmail.com";
-    $subject =$data['subject']??"Thông tin đăng ký khóa học AI";
+    $to="locn9730@gmail.com";
+    $subject =$data['subject']??"Thông tin đăng ký dịch vụ bảo hiểm";
 
     $message = <<<EOD
 Họ tên: {$data['fullName']}
