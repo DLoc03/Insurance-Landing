@@ -130,7 +130,7 @@ function ContactForm() {
 
     setLoading(true);
 
-    fetch("http://localhost/mstuyen/api.php", {
+    fetch("/api.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
